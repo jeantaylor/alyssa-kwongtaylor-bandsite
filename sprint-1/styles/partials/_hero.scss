@@ -1,0 +1,54 @@
+.hero {
+    width: 100vw; 
+    height: 183px; 
+    display: flex; 
+    align-items: center; 
+
+    &__wrapper {
+        margin: 0 16px;
+    }
+
+    &--members {
+        background-image: url('../assets/Images/hero.jpg');
+        background-size: cover;
+        position: relative; 
+    }
+
+    &__text {
+        font-family: "AvenirBold"; 
+        font-size: 24px; 
+        line-height: 32px; 
+        color: $white; 
+    }
+}
+
+@include medium {
+    .hero {
+        height: 400px; 
+
+        &__wrapper {
+            margin: 0 24px; 
+        }
+
+        &__text {
+            font-size: 60px; 
+            line-height: 68px;
+        }
+    }
+}
+
+@include large {
+    .hero {
+        height: 670px; 
+
+        &__wrapper {
+            margin: 0 180px; 
+        }
+
+        &__text {
+            font-size: 60px; 
+            line-height: 68px;
+            max-width: 60%;
+        }
+    }
+}

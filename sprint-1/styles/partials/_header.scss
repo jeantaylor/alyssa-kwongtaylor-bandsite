@@ -1,0 +1,73 @@
+.header {
+    width: 100vw; 
+    height: 80px; 
+    background-color: $black; 
+    text-align: center; 
+
+    &__logo {
+        margin: 16px auto; 
+    }
+
+    &__nav {
+        margin: 0 auto; 
+        padding: 0; 
+        list-style: none; 
+        color: $silver; 
+        display: flex; 
+        justify-content: space-between; 
+    }
+
+    &__nav-link {
+        margin: 0 auto; 
+        width: 50%; 
+
+        &--active {
+            color: $white; 
+            border-bottom: 3px solid $white; 
+        }
+    }
+
+    &__nav-link:hover {
+        color: $brainflix-blue; 
+    }
+}
+
+@include medium {
+    .header { 
+        &__wrapper {
+            margin: 0 24px;  
+            height: inherit; 
+            display: flex; 
+            align-items: center; 
+        }
+
+        &__logo {
+            margin: 0; 
+        }
+
+        &__nav-link {
+            margin-left: 56px;
+            width: 80px; 
+        }
+    }
+}
+
+@include large {
+    .header {
+        &__wrapper {
+            margin: 0 180px; 
+            height: inherit; 
+            display: flex; 
+            align-items: center; 
+        }
+
+        &__logo {
+            margin: 0; 
+        }
+
+        &__nav-link {
+            margin-left: 56px; 
+            width: 80px; 
+        }
+    }
+}
