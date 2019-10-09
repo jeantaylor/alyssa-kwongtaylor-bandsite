@@ -1,33 +1,34 @@
 .bio {
     &__wrapper--header, 
     &__wrapper--content {
-        margin: 0, 16px, 40px, 16px; 
+        margin: 0 16px; 
     }
 
     &__header {
         font-family: "AvenirBold"; 
         font-size: 24px; 
         line-height: 32px; 
-        color: $white; 
 
         margin-top: 32px; 
         margin-bottom: 24px; 
     }
 
-    &__bio__band-img {
+    &__band-img {
+        margin: 0; 
         width: 288px; 
+        height: 145px;
     }
 
     &__quote, 
     &__quote-speaker, 
     &__sub-header {
-        font-family: "AvenirSemiBold"; 
+        font-family: "AvenirDemiBold"; 
         font-size: 14px; 
         line-height: 22px; 
     }
 
     &__quote {
-        margin: 24px, 0, 32px, 0; 
+        margin: 24px 0 32px 0; 
     }
 
     &__quote-speaker {
@@ -35,12 +36,16 @@
     }
 
     &__sub-header {
-        margin: 40px, 0, 24px, 0; 
+        margin: 40px 0 24px 0; 
     }
 
     &__text {
         font-size: 13px; 
         line-height: 18px; 
         margin-bottom: 24px; 
+    }
+
+    &__text:last-of-type {
+        margin-bottom: 40px; 
     }
 }

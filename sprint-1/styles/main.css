@@ -149,6 +149,52 @@
   }
 }
 
+.bio__wrapper--header, .bio__wrapper--content {
+  margin: 0 16px;
+}
+
+.bio__header {
+  font-family: "AvenirBold";
+  font-size: 24px;
+  line-height: 32px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.bio__band-img {
+  margin: 0;
+  width: 288px;
+  height: 145px;
+}
+
+.bio__quote, .bio__quote-speaker, .bio__sub-header {
+  font-family: "AvenirDemiBold";
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.bio__quote {
+  margin: 24px 0 32px 0;
+}
+
+.bio__quote-speaker {
+  margin: 0;
+}
+
+.bio__sub-header {
+  margin: 40px 0 24px 0;
+}
+
+.bio__text {
+  font-size: 13px;
+  line-height: 18px;
+  margin-bottom: 24px;
+}
+
+.bio__text:last-of-type {
+  margin-bottom: 40px;
+}
+
 html,
 body {
   margin: 0;
