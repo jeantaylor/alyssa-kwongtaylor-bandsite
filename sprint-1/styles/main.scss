@@ -1,18 +1,10 @@
 @charset 'utf-8'; 
 
-/* Imports */
-@import './partials/breakpoints'; 
-@import './partials/fonts'; 
-@import './partials/colours'; 
-@import './partials/header'; 
-@import './partials/hero'; 
-@import './partials/bio'; 
-
 html, 
 body {
     margin: 0; 
     font-family: AvenirReg, sans-serif; 
-    color: $black; 
+    color: #323232; 
     height: 100vh; 
     box-sizing: border-box; 
 }
@@ -24,3 +16,11 @@ body {
     box-sizing: inherit; 
 }
 
+/* Imports */
+@import './partials/breakpoints'; 
+@import './partials/fonts'; 
+@import './partials/colours'; 
+@import './partials/header'; 
+@import './partials/hero'; 
+@import './partials/bio'; 
+@import './partials/gallery'; 

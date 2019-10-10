@@ -92,7 +92,7 @@
         }
 
         &__sub-header {
-            margin: 56px 0 32px 0; 
+            margin: 40px 0 32px 0; 
         }
 
         &__paragraph-wrapper {
@@ -111,4 +111,61 @@
     }
 }
 
-@include large
+@include large {
+    .bio {
+        &__header-wrapper {
+            margin: 0 12.5%; 
+        }
+
+        &__article-wrapper {
+            margin: 0 18.89% 48px 18.89%; 
+        }
+
+        &__header {
+            font-size: 36px; 
+            line-height: 44px; 
+
+            margin: 48px 0; 
+        }
+
+        &__band-img {
+            width: 62.22%; 
+            min-height: 450px; 
+        }
+
+        &__quote, 
+        &__sub-header {
+            font-family: "AvenirBold"; 
+            font-size: 24px; 
+            line-height: 32px; 
+        }
+
+        &__quote-speaker {
+            font-size: 16px; 
+            line-height: 24px; 
+        }
+
+        &__quote {
+            margin: 48px 0 40px 0; 
+        }
+
+        &__sub-header {
+            margin: 56px 0 32px 0; 
+        }
+
+        &__paragraph-wrapper {
+            display: flex; 
+        }
+
+        &__text {
+            font-size: 14px; 
+            line-height: 22px; 
+            min-width: 420px; 
+        }
+
+        &__text:last-of-type {
+            margin-left: 40px; 
+            margin-bottom: 48px; 
+        }
+    }
+}
