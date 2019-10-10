@@ -1,11 +1,11 @@
 .hero {
     width: 100vw; 
-    height: 183px; 
+    min-height: 183px; 
     display: flex; 
     align-items: center; 
 
     &__wrapper {
-        margin: 0 16px;
+        margin: 0 5%;
     }
 
     &--members {
@@ -24,10 +24,10 @@
 
 @include medium {
     .hero {
-        height: 400px; 
+        min-height: 400px; 
 
         &__wrapper {
-            margin: 0 24px; 
+            margin: 0 3.13%; 
         }
 
         &__text {
@@ -39,10 +39,10 @@
 
 @include large {
     .hero {
-        height: 670px; 
+        min-height: 670px; 
 
         &__wrapper {
-            margin: 0 180px; 
+            margin: 0 12.5%; 
         }
 
         &__text {

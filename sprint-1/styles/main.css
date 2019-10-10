@@ -56,7 +56,7 @@
 
 @media only screen and (min-width: 768px) {
   .header__wrapper {
-    margin: 0 24px;
+    margin: 0 3.13%;
     height: inherit;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -69,14 +69,14 @@
     margin: 0;
   }
   .header__nav-link {
-    margin-left: 56px;
+    margin-left: 7.29%;
     width: 80px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .header__wrapper {
-    margin: 0 180px;
+    margin: 0 12.5%;
     height: inherit;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -89,14 +89,14 @@
     margin: 0;
   }
   .header__nav-link {
-    margin-left: 56px;
+    margin-left: 3.89%;
     width: 80px;
   }
 }
 
 .hero {
   width: 100vw;
-  height: 183px;
+  min-height: 183px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,7 +106,7 @@
 }
 
 .hero__wrapper {
-  margin: 0 16px;
+  margin: 0 5%;
 }
 
 .hero--members {
@@ -124,10 +124,10 @@
 
 @media only screen and (min-width: 768px) {
   .hero {
-    height: 400px;
+    min-height: 400px;
   }
   .hero__wrapper {
-    margin: 0 24px;
+    margin: 0 3.13%;
   }
   .hero__text {
     font-size: 60px;
@@ -137,10 +137,10 @@
 
 @media only screen and (min-width: 1440px) {
   .hero {
-    height: 670px;
+    min-height: 670px;
   }
   .hero__wrapper {
-    margin: 0 180px;
+    margin: 0 12.5%;
   }
   .hero__text {
     font-size: 60px;
@@ -149,8 +149,18 @@
   }
 }
 
-.bio__wrapper--header, .bio__wrapper--content {
-  margin: 0 16px;
+.bio__header-wrapper, .bio__article-wrapper {
+  margin: 0 5%;
+}
+
+.bio__article-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .bio__header {
@@ -163,8 +173,11 @@
 
 .bio__band-img {
   margin: 0;
-  width: 288px;
-  height: 145px;
+  width: 90%;
+  min-height: 145px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .bio__quote, .bio__quote-speaker, .bio__sub-header {
@@ -193,6 +206,49 @@
 
 .bio__text:last-of-type {
   margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  .bio__header-wrapper, .bio__article-wrapper {
+    margin: 0 3.13%;
+  }
+  .bio__header {
+    font-size: 36px;
+    line-height: 44px;
+    margin: 48px 0;
+  }
+  .bio__band-img {
+    width: 93.75%;
+    min-height: 362px;
+  }
+  .bio__quote, .bio__sub-header {
+    font-family: "AvenirBold";
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .bio__quote-speaker {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .bio__quote {
+    margin: 48px 0 40px 0;
+  }
+  .bio__sub-header {
+    margin: 56px 0 32px 0;
+  }
+  .bio__paragraph-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .bio__text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .bio__text:last-of-type {
+    margin-left: 24px;
+    margin-bottom: 48px;
+  }
 }
 
 html,

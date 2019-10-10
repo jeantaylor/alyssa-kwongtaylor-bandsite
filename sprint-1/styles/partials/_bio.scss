@@ -1,7 +1,12 @@
 .bio {
-    &__wrapper--header, 
-    &__wrapper--content {
-        margin: 0 16px; 
+    &__header-wrapper, 
+    &__article-wrapper {
+        margin: 0 5%; 
+    }
+
+    &__article-wrapper {
+        display: flex; 
+        flex-direction: column; 
     }
 
     &__header {
@@ -15,8 +20,9 @@
 
     &__band-img {
         margin: 0; 
-        width: 288px; 
-        height: 145px;
+        width: 90%; 
+        min-height: 145px;
+        align-self: center; 
     }
 
     &__quote, 
@@ -49,3 +55,60 @@
         margin-bottom: 40px; 
     }
 }
+
+@include medium {
+    .bio {
+        &__header-wrapper, 
+        &__article-wrapper {
+            margin: 0 3.13%; 
+        }
+
+        &__header {
+            font-size: 36px; 
+            line-height: 44px; 
+
+            margin: 48px 0; 
+        }
+
+        &__band-img {
+            width: 93.75%; 
+            min-height: 362px; 
+        }
+
+        &__quote, 
+        &__sub-header {
+            font-family: "AvenirBold"; 
+            font-size: 24px; 
+            line-height: 32px; 
+        }
+
+        &__quote-speaker {
+            font-size: 16px; 
+            line-height: 24px; 
+        }
+
+        &__quote {
+            margin: 48px 0 40px 0; 
+        }
+
+        &__sub-header {
+            margin: 56px 0 32px 0; 
+        }
+
+        &__paragraph-wrapper {
+            display: flex; 
+        }
+
+        &__text {
+            font-size: 14px; 
+            line-height: 22px; 
+        }
+
+        &__text:last-of-type {
+            margin-left: 24px; 
+            margin-bottom: 48px; 
+        }
+    }
+}
+
+@include large
