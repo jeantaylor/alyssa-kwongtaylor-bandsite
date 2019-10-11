@@ -1,0 +1,28 @@
+.gallery {
+    background-color: $alabaster; 
+    padding: 32px 0; 
+
+    &__wrapper {
+        margin: 0 5%; 
+    }
+
+    &__header {
+        font-family: "AvenirBold"; 
+        font-size: 24px; 
+        line-height: 32px; 
+
+        margin-bottom: 24px;
+    } 
+
+    &__photo-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    &__photo {
+        margin: 0 0 16px 0; 
+        min-height: 126px; 
+        width: 100%
+    }
+}

@@ -315,4 +315,39 @@ body {
     margin-bottom: 48px;
   }
 }
+
+.gallery {
+  background-color: #fafafa;
+  padding: 32px 0;
+}
+
+.gallery__wrapper {
+  margin: 0 5%;
+}
+
+.gallery__header {
+  font-family: "AvenirBold";
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 24px;
+}
+
+.gallery__photo-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gallery__photo {
+  margin: 0 0 16px 0;
+  min-height: 126px;
+  width: 100%;
+}
 /*# sourceMappingURL=main.css.map */
