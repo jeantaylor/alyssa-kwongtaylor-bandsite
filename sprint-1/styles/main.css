@@ -318,7 +318,7 @@ body {
 
 .gallery {
   background-color: #fafafa;
-  padding: 32px 0 32px 2%;
+  padding: 32px 0;
 }
 
 .gallery__wrapper {
@@ -355,7 +355,8 @@ body {
 @media only screen and (min-width: 768px) {
   .gallery {
     width: 100%;
-    padding: 48px 2% 40px 0;
+    padding-top: 48px;
+    padding-bottom: 40px;
   }
   .gallery__wrapper {
     margin: 0 3.13%;
@@ -384,7 +385,8 @@ body {
 @media only screen and (min-width: 1440px) {
   .gallery {
     width: 100%;
-    padding: 48px 0 40px 2%;
+    padding-top: 48px;
+    padding-bottom: 40px;
   }
   .gallery__wrapper {
     margin: 0 12.5%;
@@ -407,6 +409,130 @@ body {
     min-height: 193px;
     width: 31%;
     margin-bottom: 24px;
+  }
+}
+
+.footer {
+  background-color: #323232;
+  padding: 48px 0;
+  color: #fff;
+}
+
+.footer__wrapper {
+  margin: 0 5%;
+}
+
+.footer__nav {
+  width: 100%;
+  margin-bottom: 56px;
+}
+
+.footer__nav, .footer__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__title {
+  text-transform: capitalize;
+}
+
+.footer__socials {
+  width: 80%;
+  margin: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer__social-icon:not(:first-of-type) {
+  margin-left: 32px;
+}
+
+.footer__logo {
+  display: none;
+}
+
+.footer__directory {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__contact, .footer__contact-title, .footer__contact-info, .footer__email {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.footer__contact-title {
+  font-family: "AvenirDemiBold";
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.footer__contact-info, .footer__copyright {
+  font-size: 13;
+  line-height: 18px;
+}
+
+@media only screen and (min-width: 768px) {
+  __nav,
+  __socials {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  __socials {
+    width: 80%;
+    margin: 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  __logo {
+    display: initial;
+  }
+  __directory {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  __contact,
+  __contact-title,
+  __contact-info,
+  __email {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+  __contact-title {
+    font-family: "AvenirDemiBold";
+    font-size: 14px;
+    line-height: 22px;
+  }
+  __contact-info,
+  __copyright {
+    font-size: 13;
+    line-height: 18px;
   }
 }
 /*# sourceMappingURL=main.css.map */

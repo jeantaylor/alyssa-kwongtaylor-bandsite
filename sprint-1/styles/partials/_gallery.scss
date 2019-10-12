@@ -1,6 +1,6 @@
 .gallery {
     background-color: $alabaster; 
-    padding: 32px 0 32px 2%;
+    padding: 32px 0;
 
     &__wrapper {
         margin: 0 5%; 
@@ -31,7 +31,8 @@
 @include medium {
     .gallery {
         width:100%;
-        padding: 48px 2% 40px 0;
+        padding-top: 48px; 
+        padding-bottom: 40px;
 
         &__wrapper {
             margin: 0 3.13%; 
@@ -60,7 +61,8 @@
 @include large {
     .gallery {
         width:100%;
-        padding: 48px 0 40px 2%;
+        padding-top: 48px; 
+        padding-bottom: 40px;
 
         &__wrapper {
             margin: 0 12.5%; 
