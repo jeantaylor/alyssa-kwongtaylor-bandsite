@@ -7,15 +7,16 @@
         margin: 0 5%; 
     }
 
-    &__nav {
-        width: 100%; 
-        margin-bottom: 56px; 
-    }
-
     &__nav,
     &__socials {
         display: flex;
         align-items: center;
+    }
+
+    &__nav {
+        width: 100%; 
+        margin-bottom: 56px; 
+        justify-content: space-between;
     }
 
     &__title {
@@ -25,7 +26,6 @@
     &__socials {
         width: 80%; 
         margin: 0; 
-        justify-content: space-between;
     }
 
     &__social-icon:not(:first-of-type) {
@@ -34,6 +34,8 @@
 
     &__logo {
         display: none;
+        width: 120px; 
+        height: 24px; 
     }
 
     &__directory {
@@ -58,55 +60,99 @@
 
     &__contact-info, 
     &__copyright {
-        font-size: 13; 
+        font-size: 13px; 
         line-height: 18px; 
     }
 }
 
 @include medium {
-    &__nav,
-    &__socials {
-        display: flex;
-        align-items: center;
-    }
+    .footer {
+        &__wrapper {
+            margin: 0 3.13%; 
+        }
 
-    &__socials {
-        width: 80%; 
-        margin: 0; 
-        justify-content: space-between;
-    }
+        &__intro {
+            display: flex;
+        }
 
-    &__logo {
-        display: initial;
-    }
+        &__title {
+            width: 400px; 
+        }
 
-    &__directory {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-    }
+        &__logo {
+            display: flex;
+            margin-left: auto; 
+        }
 
-    &__contact,
-    &__contact-title,
-    &__contact-info, 
-    &__email {
-        margin-bottom: 16px;
-        width: 100%;  
-    }
+        &__directory {
+            flex-direction: row;
+            width: 100%; 
+            align-items: flex-start;
+        }
 
-    &__contact-title {
-        font-family: "AvenirDemiBold";
-        font-size: 14px; 
-        line-height: 22px;
-    }
+        &__contact {
+            width: 250px; 
+        }
 
-    &__contact-info, 
-    &__copyright {
-        font-size: 13; 
-        line-height: 18px; 
+        &__contact:not(:first-of-type) {
+            margin-left: 32px;
+        }
+
+        &__contact-title {
+            font-size: 16px; 
+            line-height: 24px;
+        }
+    
+        &__contact-info, 
+        &__copyright {
+            font-size: 14px; 
+            line-height: 20px; 
+        }
     }
 }
 
 @include large {
+    .footer {
+        &__wrapper {
+            margin: 0 12.5%; 
+        }
 
+        &__intro {
+            display: flex;
+        }
+
+        &__title {
+            width: 400px; 
+        }
+
+        &__logo {
+            display: flex;
+            margin-left: auto; 
+        }
+
+        &__directory {
+            flex-direction: row;
+            width: 100%; 
+            align-items: flex-start;
+        }
+
+        &__contact {
+            width: 250px; 
+        }
+
+        &__contact:not(:first-of-type) {
+            margin-left: 32px;
+        }
+
+        &__contact-title {
+            font-size: 16px; 
+            line-height: 24px;
+        }
+    
+        &__contact-info, 
+        &__copyright {
+            font-size: 14px; 
+            line-height: 20px; 
+        }
+    }
 }
