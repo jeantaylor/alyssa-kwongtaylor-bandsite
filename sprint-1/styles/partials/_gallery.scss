@@ -26,6 +26,14 @@
         min-height: 126px; 
         width: 100%
     }
+
+    &__grayscale {
+        filter: grayscale(100%);
+    }
+
+    &__grayscale:hover {
+        filter: grayscale(0%);
+    }
 }
 
 @include medium {

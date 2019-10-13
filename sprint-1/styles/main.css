@@ -334,6 +334,16 @@ body {
   width: 100%;
 }
 
+.gallery__grayscale {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.gallery__grayscale:hover {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
 @media only screen and (min-width: 768px) {
   .gallery {
     width: 100%;
@@ -432,7 +442,7 @@ body {
           align-items: center;
 }
 
-.footer__contact, .footer__contact-title, .footer__contact-info, .footer__email {
+.footer__contact, .footer__contact-title, .footer__contact-info {
   margin-bottom: 16px;
   width: 100%;
 }
@@ -441,6 +451,15 @@ body {
   font-family: "AvenirDemiBold";
   font-size: 14px;
   line-height: 22px;
+}
+
+.footer__email {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer__email:hover {
+  color: #afafaf;
 }
 
 .footer__contact-info, .footer__copyright {
