@@ -60,30 +60,12 @@
 
 @include large {
     .gallery {
-        width:100%;
-        padding-top: 48px; 
-        padding-bottom: 40px;
-
         &__wrapper {
             margin: 0 12.5%; 
         }
 
-        &__header {
-            font-size: 36px; 
-            line-height: 44px; 
-    
-            margin-bottom: 64px;
-        }
-
-        &__photo-wrapper {
-            flex-flow: row wrap; 
-            justify-content: space-evenly;
-        }
-
         &__photo {
             min-height: 193px; 
-            width: 31%; 
-            margin-bottom: 24px; 
         }
     }
 }

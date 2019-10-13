@@ -365,32 +365,11 @@ body {
 }
 
 @media only screen and (min-width: 1440px) {
-  .gallery {
-    width: 100%;
-    padding-top: 48px;
-    padding-bottom: 40px;
-  }
   .gallery__wrapper {
     margin: 0 12.5%;
   }
-  .gallery__header {
-    font-size: 36px;
-    line-height: 44px;
-    margin-bottom: 64px;
-  }
-  .gallery__photo-wrapper {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
   .gallery__photo {
     min-height: 193px;
-    width: 31%;
-    margin-bottom: 24px;
   }
 }
 
