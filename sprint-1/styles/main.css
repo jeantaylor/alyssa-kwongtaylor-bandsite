@@ -140,6 +140,8 @@ body {
   background-image: url("../assets/Images/hero.jpg");
   background-size: cover;
   position: relative;
+  background-color: #32323250;
+  background-blend-mode: darken;
 }
 
 .hero__text {
@@ -170,8 +172,6 @@ body {
     margin: 0 12.5%;
   }
   .hero__text {
-    font-size: 60px;
-    line-height: 68px;
     max-width: 60%;
   }
 }

@@ -12,6 +12,8 @@
         background-image: url('../assets/Images/hero.jpg');
         background-size: cover;
         position: relative; 
+        background-color: $black-50opacity;
+        background-blend-mode: darken;
     }
 
     &__text {
@@ -46,8 +48,6 @@
         }
 
         &__text {
-            font-size: 60px; 
-            line-height: 68px;
             max-width: 60%;
         }
     }
