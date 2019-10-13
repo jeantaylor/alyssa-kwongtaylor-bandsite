@@ -8,27 +8,34 @@
         margin: 16px auto; 
     }
 
-    &__nav {
+    &__nav-menu {
         margin: 0 auto; 
         padding: 0; 
+        width: 100%; 
         list-style: none; 
         color: $silver; 
         display: flex; 
-        justify-content: space-between; 
+        justify-content: space-around;
+    }
+
+    &__nav-item {
+        width: 50vw; 
     }
 
     &__nav-link {
-        margin: 0 auto; 
-        width: 50%; 
+        text-decoration: none;
+        color: $silver; 
+    }
 
-        &--active {
-            color: $white; 
-            border-bottom: 3px solid $white; 
-        }
+    &__nav-link--active {
+        color: $white; 
+        border-bottom: 3px solid $white; 
     }
 
     &__nav-link:hover {
         color: $brainflix-blue; 
+        border-bottom: 3px solid $brainflix-blue;
+
     }
 }
 
@@ -41,12 +48,23 @@
             align-items: center; 
         }
 
-        &__logo {
+        &__nav {
+            width: 50%; 
             margin: 0; 
+            padding: 0; 
+        }
+
+        &__nav-menu {
+            justify-content: initial;
         }
 
         &__nav-link {
-            margin-left: 7.29%;
+            padding-top: 28px;
+            padding-bottom: 28px;
+            margin-left: 7.29%; 
+        }
+
+        &__nav-item {
             width: 80px; 
         }
     }
@@ -59,15 +77,6 @@
             height: inherit; 
             display: flex; 
             align-items: center; 
-        }
-
-        &__logo {
-            margin: 0; 
-        }
-
-        &__nav-link {
-            margin-left: 3.89%; 
-            width: 80px; 
         }
     }
 }
