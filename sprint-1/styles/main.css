@@ -400,7 +400,7 @@ body {
           justify-content: space-between;
 }
 
-.footer__title {
+.footer__title, .footer__contact-title {
   text-transform: capitalize;
 }
 
@@ -495,44 +495,6 @@ body {
 @media only screen and (min-width: 1440px) {
   .footer__wrapper {
     margin: 0 12.5%;
-  }
-  .footer__intro {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .footer__title {
-    width: 400px;
-  }
-  .footer__logo {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-left: auto;
-  }
-  .footer__directory {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    width: 100%;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-  .footer__contact {
-    width: 250px;
-  }
-  .footer__contact:not(:first-of-type) {
-    margin-left: 32px;
-  }
-  .footer__contact-title {
-    font-size: 16px;
-    line-height: 24px;
-  }
-  .footer__contact-info, .footer__copyright {
-    font-size: 14px;
-    line-height: 20px;
   }
 }
 /*# sourceMappingURL=main.css.map */

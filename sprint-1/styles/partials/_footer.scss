@@ -19,7 +19,8 @@
         justify-content: space-between;
     }
 
-    &__title {
+    &__title, 
+    &__contact-title {
         text-transform: capitalize;
     }
 
@@ -115,44 +116,6 @@
     .footer {
         &__wrapper {
             margin: 0 12.5%; 
-        }
-
-        &__intro {
-            display: flex;
-        }
-
-        &__title {
-            width: 400px; 
-        }
-
-        &__logo {
-            display: flex;
-            margin-left: auto; 
-        }
-
-        &__directory {
-            flex-direction: row;
-            width: 100%; 
-            align-items: flex-start;
-        }
-
-        &__contact {
-            width: 250px; 
-        }
-
-        &__contact:not(:first-of-type) {
-            margin-left: 32px;
-        }
-
-        &__contact-title {
-            font-size: 16px; 
-            line-height: 24px;
-        }
-    
-        &__contact-info, 
-        &__copyright {
-            font-size: 14px; 
-            line-height: 20px; 
         }
     }
 }
