@@ -80,7 +80,6 @@ body {
 @media only screen and (min-width: 768px) {
   .header__wrapper {
     margin: 0 3.13%;
-    height: inherit;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -111,7 +110,6 @@ body {
 @media only screen and (min-width: 1440px) {
   .header__wrapper {
     margin: 0 12.5%;
-    height: inherit;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -285,43 +283,18 @@ body {
   .bio__article-wrapper {
     margin: 0 18.89% 48px 18.89%;
   }
-  .bio__header {
-    font-size: 36px;
-    line-height: 44px;
-    margin: 48px 0;
-  }
   .bio__band-img {
     width: 62.22%;
     min-height: 450px;
   }
-  .bio__quote, .bio__sub-header {
-    font-family: "AvenirBold";
-    font-size: 24px;
-    line-height: 32px;
-  }
-  .bio__quote-speaker {
-    font-size: 16px;
-    line-height: 24px;
-  }
-  .bio__quote {
-    margin: 48px 0 40px 0;
-  }
   .bio__sub-header {
     margin: 56px 0 32px 0;
   }
-  .bio__paragraph-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
   .bio__text {
-    font-size: 14px;
-    line-height: 22px;
     min-width: 420px;
   }
   .bio__text:last-of-type {
     margin-left: 40px;
-    margin-bottom: 48px;
   }
 }
 
