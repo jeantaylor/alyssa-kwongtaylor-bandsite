@@ -1,0 +1,54 @@
+.hero {
+    width: 100vw; 
+    min-height: 183px; 
+    display: flex; 
+    align-items: center; 
+
+    &__wrapper {
+        margin: 0 5%;
+    }
+
+    &--members {
+        background-image: url('../assets/Images/hero.jpg');
+        background-size: cover;
+        position: relative; 
+        background-color: $black-50opacity;
+        background-blend-mode: darken;
+    }
+
+    &__text {
+        font-family: "AvenirBold"; 
+        font-size: 24px; 
+        line-height: 32px; 
+        color: $white; 
+    }
+}
+
+@include medium {
+    .hero {
+        min-height: 400px; 
+
+        &__wrapper {
+            margin: 0 3.13%; 
+        }
+
+        &__text {
+            font-size: 60px; 
+            line-height: 68px;
+        }
+    }
+}
+
+@include large {
+    .hero {
+        min-height: 670px; 
+
+        &__wrapper {
+            margin: 0 12.5%; 
+        }
+
+        &__text {
+            max-width: 60%;
+        }
+    }
+}
