@@ -35,7 +35,6 @@ body {
 }
 
 .header {
-  width: 100vw;
   height: 80px;
   background-color: #323232;
   text-align: center;
@@ -120,7 +119,6 @@ body {
 }
 
 .hero {
-  width: 100vw;
   min-height: 183px;
   display: -webkit-box;
   display: -ms-flexbox;
