@@ -140,6 +140,15 @@ body {
   background-blend-mode: darken;
 }
 
+.hero--shows {
+  background-image: url("../assets/Images/hero-shows.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-color: #32323250;
+  background-blend-mode: darken;
+}
+
 .hero__text {
   font-family: "AvenirBold";
   font-size: 24px;
@@ -157,6 +166,9 @@ body {
   .hero__text {
     font-size: 60px;
     line-height: 68px;
+  }
+  .hero__text--shows {
+    max-width: 50%;
   }
 }
 
