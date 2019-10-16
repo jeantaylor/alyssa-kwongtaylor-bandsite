@@ -1,4 +1,4 @@
-var showTimes = [
+let showTimes = [
     {Dates: "Mon Dec 17 2018", Venue: "Ronald Lane", Location: "San Francisco, CA"},
     {Dates: "Tue Jul 18 2019", Venue: "Pier 3 East", Location: "San Francisco, CA"},
     {Dates: "Fri Jul 22 2019", Venue: "View Lounge", Location: "San Francisco, CA"},
@@ -7,16 +7,16 @@ var showTimes = [
     {Dates: "Fri Sep 05 2019", Venue: "Moscow Center", Location: "San Francisco, CA"} 
 ]
 
-function makeTable (targetTable, data) {
-    for (var show of data) {
-        var row = targetTable.insertRow(); 
-        for (var key in show) {
-            var cell = row.insertCell(); 
-            var text = document.createTextNode(show[key]); //Creates #text Node
+function makeTable (targetTable, schedule) {
+    for (let show of schedule) {
+        let row = targetTable.insertRow(); // Inserts 6 <tr> into HTML
+        for (let key in show) {
+            let cell = row.insertCell(); // Inserts 3 <td> per <tr> 
+            let text = document.createTextNode(show[key]); //Creates #text Node
             cell.appendChild(text); 
         } 
-        var cell = row.insertCell(); 
-        var btn = document.createElement("button"); 
+        let cell = row.insertCell(); // Inserts 1 additional <td> per row for btn to sit
+        let btn = document.createElement("button"); 
         btn.textContent = "Buy Tickets"; 
         cell.appendChild(btn); 
 
@@ -24,17 +24,18 @@ function makeTable (targetTable, data) {
 }
 
 function makeTableHead (targetTable, dataKeys) {
-    var tHead = table.createTHead(); // Creates TH Node 
-    var row = tHead.insertRow(); 
-    for (var key of dataKeys) {
-        var th = document.createElement("th"); 
-        var text = document.createTextNode(key); 
+    let tHead = table.createTHead(); // Creates TH Node 
+    let row = tHead.insertRow(); 
+    for (let key of dataKeys) {
+        let th = document.createElement("th"); 
+        let text = document.createTextNode(key); 
         th.appendChild(text); 
         row.appendChild(th); 
     }
 }
 
-var table = document.querySelector("table"); 
-var showTimeKeys = Object.keys(showTimes[0]); 
+let tabDeskMediaQuery = window.matchMedia("(min-width: 768px)")
+let table = document.querySelector("table"); 
+let showTimeKeys = Object.keys(showTimes[0]); 
 makeTable(table, showTimes); 
 makeTableHead (table, showTimeKeys); 
