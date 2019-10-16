@@ -8,10 +8,10 @@ let showTimes = [
 ]
 
 function makeTable (targetTable, schedule) {
-    for (let show of schedule) {
-        let row = targetTable.insertRow(); // Inserts 6 <tr> into HTML
-        for (let key in show) {
-            let cell = row.insertCell(); // Inserts 3 <td> per <tr> 
+    for (let show of schedule) { // Make 6
+        let row = targetTable.insertRow(); // Inserts <tr> into HTML
+        for (let key in show) { // Make 3
+            let cell = row.insertCell(); // Inserts <td> in <tr> 
             let text = document.createTextNode(show[key]); //Creates #text Node
             cell.appendChild(text); 
         } 
@@ -31,6 +31,27 @@ function makeTableHead (targetTable, dataKeys) {
         let text = document.createTextNode(key); 
         th.appendChild(text); 
         row.appendChild(th); 
+    }
+}
+
+function makeTableMobile (targetTable, schedule) {
+    let row = targetTable.insertRow(); // Inserts 1 row
+    for (show of schedule) {
+        let cell = row.insertCell(); 
+        for (i = 0; i < schedule.length / 2; i++) {
+            let header = document.createElement('div'); 
+            let text = document.createTextNode(Object.keys(schedule[i])[i]); 
+            header.appendChild(text);
+            cell.appendChild(header);  
+
+            let content = document.createElement('div'); 
+            text = document.createTextNode(Object.values(schedule[i])[i]); 
+            content.appendChild(text); 
+            cell.appendChild(content); 
+        }
+        let btn = document.createElement("button"); 
+        btn.textContent = "Buy Tickets"; 
+        cell.appendChild(btn);
     }
 }
 
