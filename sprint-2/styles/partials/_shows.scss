@@ -1,0 +1,70 @@
+.shows {
+    &__wrapper {
+        margin: 32px 5%; 
+    }
+
+    &__header {
+        font-family: 'AvenirBold';
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    &__table {
+        width: 100%;
+    }
+
+    &__table-header {
+        color: $mercury; 
+        font-size: 12px; 
+        line-height: 20px;
+    }
+
+    &__table-content {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    &__table-content--date {
+        font-family: 'AvenirDemiBold';
+        font-size: 14px; 
+        line-height: 22px;
+    }
+}
+
+@include medium {
+    .shows {
+        &__wrapper {
+            margin: 48px 3.13%; 
+        }
+
+        &__header {
+            font-size: 36px;
+            line-height: 44px;
+        }
+
+        &__table {
+            width: 74.44%; 
+            align-self: left;
+        }
+
+        &__table-content {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        &__table-content--date {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}
+
+@include large {
+    .shows {
+        &__wrapper {
+            margin: 48px 12.5%; 
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
