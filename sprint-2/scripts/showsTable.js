@@ -63,22 +63,11 @@ let showTimes = [
 ]
 
 let table = document.querySelector("table"); 
-let tableMediaQuery = window.innerWidth; 
+let tableMediaQuery = window.matchMedia("(min-width: 768px)"); 
 
-if (tableMediaQuery < 768) {
+if (tableMediaQuery.matches) {
     makeTable(table, showTimes); 
-    makeTableHead (table, showTimes); 
+    makeTableHead (table, showTimes);
 } else {
     makeTableMobile(table, showTimes); 
 }
-
-/**
-makeTable(table, showTimes); 
-makeTableHead (table, showTimes); 
-
-if (tableMediaQuery.matches) {
-    console.log("The screen is AT LEAST 768px wide.");
-} else {
-    console.log("The screen is less than 768px wide.");
-}
-*/
