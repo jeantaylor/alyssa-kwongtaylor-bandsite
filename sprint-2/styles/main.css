@@ -149,11 +149,28 @@ body {
   background-blend-mode: darken;
 }
 
+.hero__text-wrapper {
+  margin: 64px 0;
+}
+
 .hero__text {
   font-family: "AvenirBold";
   font-size: 24px;
   line-height: 32px;
   color: #fff;
+}
+
+.hero__text--splash {
+  font-family: "AvenirBold";
+  font-size: 14px;
+  line-height: 22px;
+  color: #fff;
+}
+
+.hero__soundcloud-media {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 64px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -163,12 +180,21 @@ body {
   .hero__wrapper {
     margin: 0 3.13%;
   }
+  .hero__text-wrapper {
+    margin: 96px 0;
+  }
   .hero__text {
     font-size: 60px;
     line-height: 68px;
   }
-  .hero__text--shows {
-    max-width: 50%;
+  .hero__text--splash {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .hero__soundcloud-media {
+    width: 55%;
+    height: 146px;
+    margin-bottom: 96px;
   }
 }
 
@@ -178,9 +204,24 @@ body {
   }
   .hero__wrapper {
     margin: 0 12.5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .hero__text {
+  .hero__text-wrapper {
+    margin: 160px 0;
     max-width: 60%;
+  }
+  .hero__soundcloud-media {
+    width: 40.37%;
+    margin-left: 5.93%;
+    margin-bottom: 0;
   }
 }
 
