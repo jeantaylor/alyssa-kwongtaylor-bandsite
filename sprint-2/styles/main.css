@@ -401,10 +401,26 @@ body {
   font-family: 'AvenirBold';
   font-size: 24px;
   line-height: 32px;
+  margin: 32px 0 16px 0;
 }
 
 .shows__table {
   width: 100%;
+  text-align: left;
+}
+
+.shows__table--mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.shows__table-show {
+  border-bottom: 1px solid #e1e1e1;
 }
 
 .shows__table-header {
@@ -413,15 +429,41 @@ body {
   line-height: 20px;
 }
 
+.shows__table-header:first-child {
+  margin-top: 24px;
+}
+
 .shows__table-content {
   font-size: 13px;
   line-height: 18px;
+}
+
+.shows__table-content:not(:last-child) {
+  margin: 16px 0 24px 0;
+}
+
+.shows__table-content:nth-child(2) {
+  font-family: 'AvenirDemiBold';
 }
 
 .shows__table-content--date {
   font-family: 'AvenirDemiBold';
   font-size: 14px;
   line-height: 22px;
+}
+
+.shows__cta {
+  width: 100%;
+  height: 48px;
+  margin-bottom: 16px;
+  background-color: #323232;
+  border-style: none;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.shows__cta:hover {
+  background-color: #0065ad;
 }
 
 @media only screen and (min-width: 768px) {
@@ -432,19 +474,24 @@ body {
     font-size: 36px;
     line-height: 44px;
   }
-  .shows__table {
-    width: 74.44%;
-    -ms-flex-item-align: left;
-        -ms-grid-row-align: left;
-        align-self: left;
-  }
   .shows__table-content {
     font-size: 14px;
     line-height: 20px;
+    padding: 40px 0;
+    border-bottom: #e1e1e1 1px solid;
+  }
+  .shows__table-content:nth-child(1) {
+    font-family: 'AvenirDemiBold';
+  }
+  .shows__table-content:nth-child(2) {
+    font-family: 'AvenirReg';
   }
   .shows__table-content--date {
     font-size: 16px;
     line-height: 24px;
+  }
+  .shows__cta {
+    margin: 0;
   }
 }
 
@@ -454,10 +501,16 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .shows__table {
+    width: 74.44%;
+    margin-top: 32px;
+  }
+  .shows__cta {
+    width: 100%;
   }
 }
 
