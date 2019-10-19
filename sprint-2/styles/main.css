@@ -455,6 +455,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
 }
 
 .conversation__form-avatar {
@@ -470,6 +474,22 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
+}
+
+.conversation__field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.conversation__field > {
+  width: 100%;
 }
 
 .conversation__field-header {
@@ -477,6 +497,20 @@ body {
   font-family: 'AvenirDemiBold';
   font-size: 12px;
   line-height: 20px;
+}
+
+.conversation__cta {
+  width: 100%;
+  height: 48px;
+  margin-bottom: 16px;
+  background-color: #323232;
+  border-style: none;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.conversation__cta:hover {
+  background-color: #0065ad;
 }
 
 @media only screen and (min-width: 768px) {
@@ -494,6 +528,9 @@ body {
   .conversation__form-avatar {
     width: 9.23%;
   }
+  .conversation__cta {
+    width: 30.77%;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -505,6 +542,9 @@ body {
   }
   .conversation__form-avatar {
     width: 9.52%;
+  }
+  .conversation__cta {
+    width: 31.75%;
   }
 }
 
