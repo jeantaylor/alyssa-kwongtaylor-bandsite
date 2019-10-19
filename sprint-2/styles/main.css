@@ -447,21 +447,18 @@ body {
 
 .conversation__wrapper {
   margin-bottom: 40px;
-  width: 100%;
 }
 
 .conversation__form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 0 auto;
 }
 
-.conversation__form-avatar {
+.conversation__avatar {
   margin-right: 20px;
   width: 17.36%;
 }
@@ -497,6 +494,16 @@ body {
   font-family: 'AvenirDemiBold';
   font-size: 12px;
   line-height: 20px;
+  margin-bottom: 5px;
+}
+
+.conversation__fill {
+  border: #e1e1e1 2px solid;
+  border-radius: 4px;
+}
+
+.conversation__fill:focus {
+  border: #323232 3px solid;
 }
 
 .conversation__cta {
@@ -506,11 +513,57 @@ body {
   background-color: #323232;
   border-style: none;
   border-radius: 4px;
+  font-family: 'AvenirDemiBold';
+  text-transform: uppercase;
   color: #fff;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .conversation__cta:hover {
   background-color: #0065ad;
+}
+
+.conversation__form, .conversation__comment {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.conversation__comment {
+  margin: 24px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.conversation__comment-text {
+  width: 100%;
+}
+
+.conversation__comment-id {
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.conversation__comment-name {
+  font-family: 'AvenirDemiBold';
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.conversation__comment-date {
+  color: #afafaf;
+  margin-left: 10px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -523,13 +576,19 @@ body {
     line-height: 44px;
   }
   .conversation__wrapper {
-    width: 72.22%;
+    margin: 0 13.02% 40px 13.02%;
   }
-  .conversation__form-avatar {
+  .conversation__avatar {
     width: 9.23%;
   }
   .conversation__cta {
     width: 30.77%;
+  }
+  .conversation__comment-id {
+    margin-bottom: 16px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
 }
 
@@ -538,9 +597,9 @@ body {
     margin: 0 12.5%;
   }
   .conversation__wrapper {
-    width: 46.67%;
+    margin: 0 19.17% 40px 19.17%;
   }
-  .conversation__form-avatar {
+  .conversation__avatar {
     width: 9.52%;
   }
   .conversation__cta {

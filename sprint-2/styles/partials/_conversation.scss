@@ -10,17 +10,14 @@
 
     &__wrapper {
         margin-bottom: 40px; 
-        width: 100%; 
     }
 
     &__form {
         display: flex;
-        width: 100%; 
         justify-content: space-between;
-        margin: 0 auto; 
     }
 
-    &__form-avatar {
+    &__avatar {
         margin-right: 20px; 
         width: 17.36%; 
     }
@@ -46,6 +43,16 @@
         font-family: 'AvenirDemiBold';
         font-size: 12px; 
         line-height: 20px; 
+        margin-bottom: 5px;
+    }
+
+    &__fill {
+        border: $mercury 2px solid; 
+        border-radius: 4px;
+    }
+
+    &__fill:focus {
+        border: $black 3px solid;
     }
 
     &__cta {
@@ -55,11 +62,48 @@
         background-color: $black;
         border-style: none;
         border-radius: 4px;
+        font-family: 'AvenirDemiBold'; 
+        text-transform: uppercase;
         color: $white;
+        align-self: flex-end;
         &:hover {
             background-color: $brainflix-blue;
         }
     }
+
+    &__form, 
+    &__comment {
+        border-bottom: 1px solid $mercury;
+    }
+
+    &__comment {
+        margin: 24px 0; 
+        display: flex; 
+        justify-content: space-between; 
+    }
+
+    &__comment-text {
+        width: 100%; 
+    }
+
+    &__comment-id {
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__comment-name {
+        font-family: 'AvenirDemiBold';
+        font-size: 14px; 
+        line-height: 22px;
+    }
+
+    &__comment-date {
+        color: $silver; 
+        margin-left: 10px; 
+    }
+
 }
 
 @include medium {
@@ -73,15 +117,20 @@
         }
 
         &__wrapper {
-            width: 72.22%; 
+            margin: 0 13.02% 40px 13.02%;
         }
 
-        &__form-avatar {
+        &__avatar {
             width: 9.23%; 
         }
 
         &__cta {
             width: 30.77%; 
+        }
+
+        &__comment-id {
+            margin-bottom: 16px;
+            justify-content: flex-start;
         }
     }
 }
@@ -91,10 +140,10 @@
         margin: 0 12.5%; 
 
         &__wrapper {
-            width: 46.67%; 
+            margin: 0 19.17% 40px 19.17%;
         }
 
-        &__form-avatar {
+        &__avatar {
             width: 9.52%; 
         }
 
