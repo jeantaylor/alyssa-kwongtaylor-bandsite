@@ -1,14 +1,30 @@
 const commentData = [
-    {name: "Anita Yu", date: "12/18/2018", msg: "*dabs*",}, 
-    {name: "Parvaneh Zolfaghari", date: "12/12/2018", msg: "Their sick beats blew my mind omg",}, 
-    {name: "Nooruddin Khorasi", date: "11/15/2018", msg: "10/10, would watch again!",}
+    {name: "Anita Yu", date: "12/18/2018", msg: "*dabs*", img: ""}, 
+    {name: "Parvaneh Zolfaghari", date: "12/12/2018", msg: "Their sick beats blew my mind omg", img: ""}, 
+    {name: "Nooruddin Khorasi", date: "11/15/2018", msg: "10/10, would watch again!", img: ""}
 ]
 
 const form = document.querySelector("#conversation__input"); 
 const thread = document.querySelector(".conversation__thread"); 
 
+// Clears existing comments from thread 
+// Method + code by Pankaj_Singh @ geeksfor geeks.org 
+function removeChildren (element) {
+    let child = element.lastElementChild; 
+    while (child) {
+        element.removeChild(child); 
+        child = element.lastElementChild; 
+    }
+}
+
 function displayComments (commentData) {
+    // Clear existing comments to prep for reload, if any
+    if (thread.firstChild) {
+        removeChildren(thread); 
+    }
+
     let content; 
+
     for (entry of commentData) {
         // Create all HTML that comprises a comment
         let comment = document.createElement('div'); 
@@ -36,7 +52,6 @@ function displayComments (commentData) {
         msg.classList.add("conversation__comment-msg"); 
 
         //Fetch and append data to elements 
-        //console.log(entry.name); 
         content = document.createTextNode(entry.name); 
         name.appendChild(content); 
 
@@ -45,6 +60,14 @@ function displayComments (commentData) {
 
         content = document.createTextNode(entry.msg); 
         msg.appendChild(content); 
+
+        // Set comment avatar 
+        if (entry.img === "") {
+            avatar.src = ""; 
+            avatar.alt = "Upload an Avatar here for your comments!"; 
+        } else {
+            avatar.src = entry.img; 
+        }
 
         // Building the Comment, inside elements out 
         id.appendChild(name); 
@@ -78,12 +101,14 @@ form.addEventListener('submit', (event) => {
     let date = getDate(); 
     let name = event.target.name.value; 
     let msg = event.target.msg.value; 
+    let avatar = event.target.avatar.src; 
 
     let comment = {}; 
 
     comment.name = name; 
     comment.date = date; 
     comment.msg = msg; 
+    comment.img = avatar; 
 
     commentData.unshift(comment); 
     //console.log(commentData); 
