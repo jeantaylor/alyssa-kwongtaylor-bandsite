@@ -64,7 +64,7 @@ function makeTableMobile (targetTable, schedule) {
     }
 }
 
-let showTimes = [
+const showTimes = [
     {Dates: "Mon Dec 17 2018", Venue: "Ronald Lane", Location: "San Francisco, CA"},
     {Dates: "Tue Jul 18 2019", Venue: "Pier 3 East", Location: "San Francisco, CA"},
     {Dates: "Fri Jul 22 2019", Venue: "View Lounge", Location: "San Francisco, CA"},
@@ -73,8 +73,8 @@ let showTimes = [
     {Dates: "Fri Sep 05 2019", Venue: "Moscow Center", Location: "San Francisco, CA"} 
 ]
 
-let table = document.querySelector("table"); 
-let tableMediaQuery = window.matchMedia("(min-width: 768px)"); 
+const table = document.querySelector("table"); 
+const tableMediaQuery = window.matchMedia("(min-width: 768px)"); 
 
 if (tableMediaQuery.matches) {
     makeTable(table, showTimes); 
