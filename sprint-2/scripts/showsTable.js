@@ -40,19 +40,19 @@ function makeTableMobile (targetTable, schedule) {
         let cell = row.insertCell(); 
         cell.classList.add("shows__table-show"); 
         for (i = 0; i < 3; i++) {
-            console.log(show, i)
+            //console.log(show, i)
             let header = document.createElement('div'); 
             let text = document.createTextNode(scheduleKeys[i]); 
-            console.log(header); 
-            console.log(text); 
+            //console.log(header); 
+            //console.log(text); 
             header.appendChild(text);
             cell.appendChild(header);  
             header.classList.add("shows__table-header"); 
 
             let content = document.createElement('div'); 
             text = document.createTextNode(Object.values(show)[i]); 
-            console.log(content); 
-            console.log(text); 
+            //console.log(content); 
+            //console.log(text); 
             content.appendChild(text); 
             cell.appendChild(content); 
             content.classList.add("shows__table-content"); 

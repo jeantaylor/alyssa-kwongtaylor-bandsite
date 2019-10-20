@@ -7,13 +7,21 @@ const commentData = [
 const form = document.querySelector("#conversation__input"); 
 const thread = document.querySelector(".conversation__thread"); 
 
-function loadComments (thread, commentData) {
+function displayComments (commentData) {
+    let content; 
     for (entry of commentData) {
-        let comment = document. createElement('div'); 
+        // Create all HTML that comprises a comment
+        let comment = document.createElement('div'); 
         comment.classList.add("conversation__comment"); 
 
+        let avatarWrapper = document.createElement('div'); 
+        avatarWrapper.classList.add('conversation__avatar-wrapper'); 
+
+        let avatar = document.createElement('img'); 
+        avatar.classList.add("conversation__avatar"); 
+
         let commentText = document.createElement('div'); 
-        commentText.classList.add("converstation__comment-text"); 
+        commentText.classList.add("conversation__comment-text"); 
 
         let id = document.createElement('div'); 
         id.classList.add("conversation__comment-id"); 
@@ -27,9 +35,32 @@ function loadComments (thread, commentData) {
         let msg = document.createElement('div'); 
         msg.classList.add("conversation__comment-msg"); 
 
-        let avatar = document.createElement('div'); 
-        avatar.classList.add("conversation__avatar"); 
+        //Fetch and append data to elements 
+        //console.log(entry.name); 
+        content = document.createTextNode(entry.name); 
+        name.appendChild(content); 
+
+        content = document.createTextNode(entry.date); 
+        date.appendChild(content); 
+
+        content = document.createTextNode(entry.msg); 
+        msg.appendChild(content); 
+
+        // Building the Comment, inside elements out 
+        id.appendChild(name); 
+        id.appendChild(date); 
+
+        commentText.appendChild(id);
+        commentText.appendChild(msg); 
         
+        avatarWrapper.appendChild(avatar); 
+
+        comment.appendChild(avatarWrapper); 
+        comment.appendChild(commentText); 
+
+        // Append completed comment to thread 
+        thread.appendChild(comment); 
+
     }
 }
 
@@ -57,9 +88,9 @@ form.addEventListener('submit', (event) => {
     commentData.unshift(comment); 
     //console.log(commentData); 
 
-    loadComments(thread, commentData); 
+    displayComments(commentData); 
 })
 
-//window.onload = () => {
-//   loadComments(thread, commentData); 
-//}
+window.onload = () => {
+   displayComments(commentData); 
+}
