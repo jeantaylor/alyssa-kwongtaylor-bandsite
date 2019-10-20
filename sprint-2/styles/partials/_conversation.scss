@@ -16,15 +16,30 @@
         display: flex;
         justify-content: space-between;
     }
+// avatar-wrapper + avatar css from Bianca Power @ medium.com
+    &__avatar-wrapper {
+        margin-right: 20px; 
+        width: 45px; 
+        height: 45px; 
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+    }
 
     &__avatar {
-        margin-right: 20px; 
-        width: 17.36%; 
+        width: inherit;
+        height: inherit;
     }
 
     &__input {
         display: flex;
         width: 100%;
+    }
+
+    &__field-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: inherit; 
     }
 
     &__field {
@@ -83,6 +98,7 @@
 
     &__comment-text {
         width: 100%; 
+        margin-bottom: 24px;
     }
 
     &__comment-id {
@@ -119,10 +135,6 @@
             margin: 0 13.02% 40px 13.02%;
         }
 
-        &__avatar {
-            width: 9.23%; 
-        }
-
         &__cta {
             width: 30.77%; 
         }
@@ -140,10 +152,6 @@
 
         &__wrapper {
             margin: 0 19.17% 40px 19.17%;
-        }
-
-        &__avatar {
-            width: 9.52%; 
         }
 
         &__cta {

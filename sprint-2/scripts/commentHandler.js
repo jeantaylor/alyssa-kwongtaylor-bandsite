@@ -29,6 +29,7 @@ function loadComments (thread, commentData) {
 
         let avatar = document.createElement('div'); 
         avatar.classList.add("conversation__avatar"); 
+        
     }
 }
 
@@ -56,7 +57,7 @@ form.addEventListener('submit', (event) => {
     commentData.unshift(comment); 
     //console.log(commentData); 
 
-    loadComments(); 
+    loadComments(thread, commentData); 
 })
 
 //window.onload = () => {

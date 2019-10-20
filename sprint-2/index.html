@@ -84,21 +84,27 @@
             <div class="conversation__wrapper">
                 <div class="conversation__form">
                     <form class="conversation__input" id="conversation__input">
-                        <img class="conversation__avatar" src="" alt="Upload an Avatar here for your comments!">
-                        <div class="conversation__field">
-                            <label class ="conversation__field-header" for="name">Name</label>
-                            <input class="conversation__fill" type="text" id="name" name="name" value="Mohan Muruge"> 
+                        <div class="conversation__avatar-wrapper">
+                            <img class="conversation__avatar" src="./assets/Images/Mohan-muruge.jpg" alt="Upload an Avatar here for your comments!">
                         </div>
-                        <div class="conversation__field">
-                            <label class ="conversation__field-header" for="msg">Comment</label>
-                            <textarea class="conversation__fill" id="msg" name="msg" rows="6">Add a new comment!</textarea>
+                        <div class="conversation__field-wrapper">
+                            <div class="conversation__field">
+                                <label class ="conversation__field-header" for="name">Name</label>
+                                <input class="conversation__fill" type="text" id="name" name="name" value="Mohan Muruge"> 
+                            </div>
+                            <div class="conversation__field">
+                                <label class ="conversation__field-header" for="msg">Comment</label>
+                                <textarea class="conversation__fill" id="msg" name="msg" rows="6">Add a new comment!</textarea>
+                            </div>
+                            <button type="submit" class="conversation__cta">Comment</button>
                         </div>
-                        <button type="submit" class="conversation__cta">Comment</button>
                     </form>
                 </div>
                 <div class="conversation__thread">
                     <div class="conversation__comment">
-                        <img class="conversation__avatar" src="" alt="Upload an Avatar here for your comments!">
+                        <div class="conversation__avatar-wrapper">
+                            <img class="conversation__avatar" src="" alt="Upload an Avatar here for your comments!">
+                        </div>
                         <div class="conversation__comment-text">
                             <div class="conversation__comment-id">
                                 <div class="conversation__comment-name">Julio del Bosco</div>
