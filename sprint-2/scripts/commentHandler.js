@@ -7,13 +7,10 @@ const commentData = [
 const form = document.querySelector("#conversation__input"); 
 const thread = document.querySelector(".conversation__thread"); 
 
-// Clears existing comments from thread 
-// Method + code by Pankaj_Singh @ geeksfor geeks.org 
+// Method for removing all children of node from MDN
 function removeChildren (element) {
-    let child = element.lastElementChild; 
-    while (child) {
-        element.removeChild(child); 
-        child = element.lastElementChild; 
+    while (element.firstChild) {
+        element.removeChild(element.firstChild); 
     }
 }
 
@@ -111,7 +108,8 @@ form.addEventListener('submit', (event) => {
     comment.img = avatar; 
 
     commentData.unshift(comment); 
-    //console.log(commentData); 
+
+    form.reset(); 
 
     displayComments(commentData); 
 })
