@@ -1,3 +1,20 @@
+function reloadTable () {
+    removeChildren(table); 
+
+    if (tableMediaQuery.matches) {
+        makeTable(table, showTimes); 
+        makeTableHead (table, showTimes);
+    } else {
+        makeTableMobile(table, showTimes); 
+    }
+}
+
+function removeChildren (element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild); 
+    }
+}
+
 function makeTable (targetTable, schedule) {
     targetTable.classList.add("shows__table"); 
     for (let show of schedule) { // Make 6
@@ -83,3 +100,4 @@ if (tableMediaQuery.matches) {
     makeTableMobile(table, showTimes); 
 }
 
+window.onresize = reloadTable; 
