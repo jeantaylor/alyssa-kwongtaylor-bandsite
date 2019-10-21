@@ -17,15 +17,15 @@ function removeChildren (element) {
 
 function makeTable (targetTable, schedule) {
     targetTable.classList.add("shows__table"); 
-    for (let show of schedule) { // Make 6
-        let row = targetTable.insertRow(); // Inserts <tr> into HTML
-        for (let key in show) { // Make 3
-            let cell = row.insertCell(); // Inserts <td> in <tr> 
-            let text = document.createTextNode(show[key]); //Creates #text Node
+    for (let show of schedule) { 
+        let row = targetTable.insertRow();
+        for (let key in show) { 
+            let cell = row.insertCell();
+            let text = document.createTextNode(show[key]); 
             cell.appendChild(text); 
             cell.classList.add("shows__table-content"); 
         } 
-        let cell = row.insertCell(); // Inserts 1 additional <td> per row for btn to sit
+        let cell = row.insertCell(); 
         cell.classList.add("shows__table-content");
         let btn = document.createElement("button"); 
         btn.textContent = "Buy Tickets"; 
@@ -37,7 +37,7 @@ function makeTable (targetTable, schedule) {
 
 function makeTableHead (targetTable, schedule) {
     let scheduleKeys = Object.keys(schedule[0]); 
-    let tHead = table.createTHead(); // Creates TH Node 
+    let tHead = table.createTHead(); 
     tHead.classList.add("shows__table-header"); 
     let row = tHead.insertRow(); 
     for (let key of scheduleKeys) {
@@ -51,25 +51,20 @@ function makeTableHead (targetTable, schedule) {
 function makeTableMobile (targetTable, schedule) {
     targetTable.classList.add("shows__table"); 
     let scheduleKeys = Object.keys(schedule[0]); 
-    let row = targetTable.insertRow(); // Inserts 1 row
+    let row = targetTable.insertRow(); 
     row.classList.add("shows__table--mobile"); 
     for (show of schedule) {
         let cell = row.insertCell(); 
         cell.classList.add("shows__table-show"); 
         for (i = 0; i < 3; i++) {
-            //console.log(show, i)
             let header = document.createElement('div'); 
             let text = document.createTextNode(scheduleKeys[i]); 
-            //console.log(header); 
-            //console.log(text); 
             header.appendChild(text);
             cell.appendChild(header);  
             header.classList.add("shows__table-header"); 
 
             let content = document.createElement('div'); 
             text = document.createTextNode(Object.values(show)[i]); 
-            //console.log(content); 
-            //console.log(text); 
             content.appendChild(text); 
             cell.appendChild(content); 
             content.classList.add("shows__table-content"); 
