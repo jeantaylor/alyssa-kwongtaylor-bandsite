@@ -1,8 +1,12 @@
-const commentData = [
-    {name: "Anita Yu", date: "12/18/2018", msg: "*dabs*", img: "./assets/Images/anita-yu.jpg"}, 
-    {name: "Parvaneh Zolfaghari", date: "12/12/2018", msg: "Their sick beats blew my mind omg", img: "./assets/Images/parveneh-zolfaghari.jpg"}, 
-    {name: "Nooruddin Khorasi", date: "11/15/2018", msg: "10/10, would watch again!", img: "./assets/Images/noor-khorasi.jpg"}
-]
+// Variable Declarations
+const projectKey = "2bb7dd6d-ca82-47b6-9411-0b448a4f3395"; 
+
+let commentData = []; 
+axios.get("https://project-1-api.herokuapp.com/comments?api_key=" + projectKey) 
+    .then((resp) => {
+        commentData = resp.data;
+        displayComments(commentData); 
+    }) 
 
 const form = document.querySelector("#conversation__input"); 
 const thread = document.querySelector(".conversation__thread"); 
@@ -52,10 +56,10 @@ function displayComments (commentData) {
         content = document.createTextNode(entry.name); 
         name.appendChild(content); 
 
-        content = document.createTextNode(entry.date); 
+        content = document.createTextNode(entry.timestamp); 
         date.appendChild(content); 
 
-        content = document.createTextNode(entry.msg); 
+        content = document.createTextNode(entry.comment); 
         msg.appendChild(content); 
 
         // Set comment avatar 
@@ -80,7 +84,6 @@ function displayComments (commentData) {
 
         // Append completed comment to thread 
         thread.appendChild(comment); 
-
     }
 }
 
@@ -97,13 +100,13 @@ form.addEventListener('submit', (event) => {
 
     let date = getDate(); 
     let name = event.target.name.value; 
-    let msg = event.target.msg.value; 
+    let msg = event.target.comment.value; 
     let avatar = event.target.avatar.src; 
 
     let comment = {}; 
 
     comment.name = name; 
-    comment.date = date; 
+    comment.timestamp = date; 
     comment.msg = msg; 
     comment.img = avatar; 
 
@@ -113,7 +116,3 @@ form.addEventListener('submit', (event) => {
 
     displayComments(commentData); 
 })
-
-window.onload = () => {
-   displayComments(commentData); 
-}
