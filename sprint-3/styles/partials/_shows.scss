@@ -1,0 +1,123 @@
+.shows {
+    &__wrapper {
+        margin: 32px 5%; 
+    }
+
+    &__header {
+        font-family: 'AvenirBold';
+        font-size: 24px;
+        line-height: 32px;
+        margin: 32px 0 16px 0; 
+    }
+
+    &__table {
+        width: 100%;
+        text-align: left;
+        &--mobile {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__table-show {
+        border-bottom: 1px solid $mercury;
+    }
+
+    &__table-header {
+        color: $mercury; 
+        font-size: 12px; 
+        line-height: 20px;
+    }
+
+    &__table-header:first-child {
+        margin-top: 24px; 
+    }
+
+    &__table-content {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    &__table-content:not(:last-child) {
+        margin: 16px 0 24px 0; 
+    }
+
+    &__table-content:nth-child(2) {
+        font-family: 'AvenirDemiBold';
+    }
+
+    &__table-content--date {
+        font-family: 'AvenirDemiBold';
+        font-size: 14px; 
+        line-height: 22px;
+    }
+
+    &__cta {
+        width: 100%; 
+        height: 48px; 
+        margin-bottom: 16px;
+        background-color: $black;
+        border-style: none;
+        border-radius: 4px;
+        color: $white;
+        &:hover {
+            background-color: $brainflix-blue;
+        }
+    }
+}
+
+@include medium {
+    .shows {
+        &__wrapper {
+            margin: 48px 3.13%; 
+        }
+
+        &__header {
+            font-size: 36px;
+            line-height: 44px;
+        }
+
+        &__table-content {
+            font-size: 14px;
+            line-height: 20px;
+            padding: 40px 0; 
+            border-bottom: $mercury 1px solid;
+        }
+
+        &__table-content:nth-child(1) {
+            font-family: 'AvenirDemiBold';
+        }
+
+        &__table-content:nth-child(2) {
+            font-family: 'AvenirReg';
+        }
+
+        &__table-content--date {
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        &__cta {
+            margin: 0; 
+        }
+    }
+}
+
+@include large {
+    .shows {
+        &__wrapper {
+            margin: 48px 12.5%; 
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__table {
+            width: 74.44%; 
+            margin-top: 32px;
+        }
+
+        &__cta {
+            width: 100%; 
+        }
+    }
+}
