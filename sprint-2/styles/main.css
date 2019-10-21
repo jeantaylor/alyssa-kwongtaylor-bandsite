@@ -516,6 +516,7 @@ body {
 }
 
 .conversation__fill {
+  font-family: 'AvenirReg';
   border: #e1e1e1 2px solid;
   border-radius: 4px;
 }

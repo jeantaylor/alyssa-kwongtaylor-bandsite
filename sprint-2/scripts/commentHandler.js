@@ -1,7 +1,7 @@
 const commentData = [
-    {name: "Anita Yu", date: "12/18/2018", msg: "*dabs*", img: ""}, 
-    {name: "Parvaneh Zolfaghari", date: "12/12/2018", msg: "Their sick beats blew my mind omg", img: ""}, 
-    {name: "Nooruddin Khorasi", date: "11/15/2018", msg: "10/10, would watch again!", img: ""}
+    {name: "Anita Yu", date: "12/18/2018", msg: "*dabs*", img: "./assets/Images/anita-yu.jpg"}, 
+    {name: "Parvaneh Zolfaghari", date: "12/12/2018", msg: "Their sick beats blew my mind omg", img: "./assets/Images/parveneh-zolfaghari.jpg"}, 
+    {name: "Nooruddin Khorasi", date: "11/15/2018", msg: "10/10, would watch again!", img: "./assets/Images/noor-khorasi.jpg"}
 ]
 
 const form = document.querySelector("#conversation__input"); 
