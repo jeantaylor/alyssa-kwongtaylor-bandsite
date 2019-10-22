@@ -56,7 +56,7 @@ function displayComments (commentData) {
         content = document.createTextNode(entry.name); 
         name.appendChild(content); 
 
-        content = document.createTextNode(entry.timestamp); 
+        content = document.createTextNode(formatDate(entry.timestamp)); 
         date.appendChild(content); 
 
         content = document.createTextNode(entry.comment); 
@@ -87,8 +87,8 @@ function displayComments (commentData) {
     }
 }
 
-function getDate() {
-    let date = new Date(); 
+function formatDate(epochTime) {
+    let date = new Date(epochTime); 
     let mo = date.getMonth() + 1; 
     let d = date.getDate(); 
     let y = date.getFullYear(); 
@@ -97,20 +97,22 @@ function getDate() {
 
 form.addEventListener('submit', (event) => {
     event.preventDefault(); 
-
-    let date = getDate(); 
+    
+    let localTime = new Date(); 
+    
+    let date = formatDate(localTime.getTime()); 
     let name = event.target.name.value; 
-    let msg = event.target.comment.value; 
+    let comment = event.target.comment.value; 
     let avatar = event.target.avatar.src; 
 
-    let comment = {}; 
+    let entry = {}; 
 
-    comment.name = name; 
-    comment.timestamp = date; 
-    comment.msg = msg; 
-    comment.img = avatar; 
+    entry.name = name; 
+    entry.timestamp = date; 
+    entry.comment = comment; 
+    entry.img = avatar; 
 
-    commentData.unshift(comment); 
+    commentData.unshift(entry); 
 
     form.reset(); 
 

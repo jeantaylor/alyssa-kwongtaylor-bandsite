@@ -1,19 +1,30 @@
 // Variable Declarations
 const projectKey = "2bb7dd6d-ca82-47b6-9411-0b448a4f3395"; 
 
-const showTimes = [
-    {Dates: "Mon Dec 17 2018", Venue: "Ronald Lane", Location: "San Francisco, CA"},
-    {Dates: "Tue Jul 18 2019", Venue: "Pier 3 East", Location: "San Francisco, CA"},
-    {Dates: "Fri Jul 22 2019", Venue: "View Lounge", Location: "San Francisco, CA"},
-    {Dates: "Wed Aug 11 2019", Venue: "Pres Club", Location: "San Francisco, CA"},
-    {Dates: "Sa Aug 12 2019", Venue: "Hyatt Agency", Location: "San Francisco, CA"},
-    {Dates: "Fri Sep 05 2019", Venue: "Moscow Center", Location: "San Francisco, CA"} 
-]
+const showTimes = [];
+axios.get("https://project-1-api.herokuapp.com/showdates?api_key=" + projectKey) 
+    .then((resp) => {
+        showTimes.push(resp.data);
+        if (tableMediaQuery.matches) {
+            makeTable(table, resp.data); 
+            makeTableHead (table, resp.data);
+        } else {
+            makeTableMobile(table, resp.data); 
+        }
+    }) 
+// const showTimes = [
+//     {Dates: "Mon Dec 17 2018", Venue: "Ronald Lane", Location: "San Francisco, CA"},
+//     {Dates: "Tue Jul 18 2019", Venue: "Pier 3 East", Location: "San Francisco, CA"},
+//     {Dates: "Fri Jul 22 2019", Venue: "View Lounge", Location: "San Francisco, CA"},
+//     {Dates: "Wed Aug 11 2019", Venue: "Pres Club", Location: "San Francisco, CA"},
+//     {Dates: "Sa Aug 12 2019", Venue: "Hyatt Agency", Location: "San Francisco, CA"},
+//     {Dates: "Fri Sep 05 2019", Venue: "Moscow Center", Location: "San Francisco, CA"} 
+// ]
     
-    const table = document.querySelector("table"); 
-    const tableMediaQuery = window.matchMedia("(min-width: 768px)"); 
+const table = document.querySelector("table"); 
+const tableMediaQuery = window.matchMedia("(min-width: 768px)"); 
 
-function reloadTable () {
+function reloadTable (showTimes) {
     removeChildren(table); 
 
     if (tableMediaQuery.matches) {
@@ -35,10 +46,12 @@ function makeTable (targetTable, schedule) {
     for (let show of schedule) { 
         let row = targetTable.insertRow();
         for (let key in show) { 
-            let cell = row.insertCell();
-            let text = document.createTextNode(show[key]); 
-            cell.appendChild(text); 
-            cell.classList.add("shows__table-content"); 
+            if (key !== "id") {
+                let cell = row.insertCell();
+                let text = document.createTextNode(show[key]); 
+                cell.appendChild(text); 
+                cell.classList.add("shows__table-content");
+            } 
         } 
         let cell = row.insertCell(); 
         cell.classList.add("shows__table-content");
@@ -46,7 +59,6 @@ function makeTable (targetTable, schedule) {
         btn.textContent = "Buy Tickets"; 
         btn.classList.add("shows__cta"); 
         cell.appendChild(btn); 
-
     }
 }
 
@@ -56,10 +68,12 @@ function makeTableHead (targetTable, schedule) {
     tHead.classList.add("shows__table-header"); 
     let row = tHead.insertRow(); 
     for (let key of scheduleKeys) {
-        let th = document.createElement("th"); 
-        let text = document.createTextNode(key); 
-        th.appendChild(text); 
-        row.appendChild(th); 
+            let th = document.createElement("th"); 
+            let text = document.createTextNode(key); 
+            if (key !== "id") {
+            th.appendChild(text); 
+            row.appendChild(th); 
+        }
     }
 }
 
@@ -71,7 +85,7 @@ function makeTableMobile (targetTable, schedule) {
     for (show of schedule) {
         let cell = row.insertCell(); 
         cell.classList.add("shows__table-show"); 
-        for (i = 0; i < 3; i++) {
+        for (i = 1; i < 4; i++) {
             let header = document.createElement('div'); 
             let text = document.createTextNode(scheduleKeys[i]); 
             header.appendChild(text);
@@ -91,11 +105,11 @@ function makeTableMobile (targetTable, schedule) {
     }
 }
 
-if (tableMediaQuery.matches) {
-    makeTable(table, showTimes); 
-    makeTableHead (table, showTimes);
-} else {
-    makeTableMobile(table, showTimes); 
-}
+// if (tableMediaQuery.matches) {
+//     makeTable(table, showTimes); 
+//     makeTableHead (table, showTimes);
+// } else {
+//     makeTableMobile(table, showTimes); 
+// }
 
-window.onresize = reloadTable; 
+// window.onresize = reloadMobileTable(showTimes); 
