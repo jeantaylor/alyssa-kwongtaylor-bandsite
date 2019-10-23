@@ -27,6 +27,11 @@
         border-radius: 50%;
     }
 
+    &__thread {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
     &__avatar {
         object-fit: cover;
         width: inherit;

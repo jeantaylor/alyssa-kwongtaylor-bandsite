@@ -467,6 +467,16 @@ body {
   border-radius: 50%;
 }
 
+.conversation__thread {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
 .conversation__avatar {
   -o-object-fit: cover;
      object-fit: cover;

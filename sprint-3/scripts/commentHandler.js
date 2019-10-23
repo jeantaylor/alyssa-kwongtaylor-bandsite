@@ -2,11 +2,13 @@
 const projectKey = "2bb7dd6d-ca82-47b6-9411-0b448a4f3395"; 
 
 let commentData = []; 
-axios.get("https://project-1-api.herokuapp.com/comments?api_key=" + projectKey) 
-    .then((resp) => {
-        commentData = resp.data;
-        displayComments(commentData); 
-    }) 
+function reloadData() {
+    axios.get("https://project-1-api.herokuapp.com/comments?api_key=" + projectKey) 
+        .then((resp) => {
+            commentData = resp.data;
+            displayComments(commentData); 
+        }) 
+}
 
 const form = document.querySelector("#conversation__input"); 
 const thread = document.querySelector(".conversation__thread"); 
@@ -62,14 +64,6 @@ function displayComments (commentData) {
         content = document.createTextNode(entry.comment); 
         msg.appendChild(content); 
 
-        // Set comment avatar 
-        if (entry.img === "") {
-            avatar.src = ""; 
-            avatar.alt = "Upload an Avatar here for your comments!"; 
-        } else {
-            avatar.src = entry.img; 
-        }
-
         // Building the Comment, inside elements out 
         id.appendChild(name); 
         id.appendChild(date); 
@@ -98,9 +92,6 @@ function formatDate(epochTime) {
 form.addEventListener('submit', (event) => {
     event.preventDefault(); 
     
-    let localTime = new Date(); 
-    
-    let date = formatDate(localTime.getTime()); 
     let name = event.target.name.value; 
     let comment = event.target.comment.value; 
     let avatar = event.target.avatar.src; 
@@ -108,13 +99,15 @@ form.addEventListener('submit', (event) => {
     let entry = {}; 
 
     entry.name = name; 
-    entry.timestamp = date; 
     entry.comment = comment; 
-    entry.img = avatar; 
 
-    commentData.unshift(entry); 
-
-    form.reset(); 
-
-    displayComments(commentData); 
+    axios({
+        method: "post",
+        url: ("https://project-1-api.herokuapp.com/comments?api_key=" + projectKey), 
+        data: {name: entry.name, comment: entry.comment} 
+    }) .then(resp => {
+        reloadData();
+    });
 })
+
+reloadData(); 
