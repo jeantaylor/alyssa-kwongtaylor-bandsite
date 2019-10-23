@@ -1,6 +1,9 @@
 // Variable Declarations
 const projectKey = "2bb7dd6d-ca82-47b6-9411-0b448a4f3395"; 
+const form = document.querySelector("#conversation__input"); 
+const thread = document.querySelector(".conversation__thread"); 
 
+// Fetch Data from API
 let commentData = []; 
 function reloadData() {
     axios.get("https://project-1-api.herokuapp.com/comments?api_key=" + projectKey) 
@@ -9,9 +12,6 @@ function reloadData() {
             displayComments(commentData); 
         }) 
 }
-
-const form = document.querySelector("#conversation__input"); 
-const thread = document.querySelector(".conversation__thread"); 
 
 // Method for removing all children of node from MDN
 function removeChildren (element) {
@@ -100,6 +100,8 @@ form.addEventListener('submit', (event) => {
 
     entry.name = name; 
     entry.comment = comment; 
+
+    form.reset(); 
 
     axios({
         method: "post",

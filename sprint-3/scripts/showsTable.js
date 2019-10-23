@@ -1,39 +1,22 @@
 // Variable Declarations
 const projectKey = "2bb7dd6d-ca82-47b6-9411-0b448a4f3395"; 
-
-const showTimes = [];
-axios.get("https://project-1-api.herokuapp.com/showdates?api_key=" + projectKey) 
-    .then((resp) => {
-        showTimes.push(resp.data);
-        if (tableMediaQuery.matches) {
-            makeTable(table, resp.data); 
-            makeTableHead (table, resp.data);
-        } else {
-            makeTableMobile(table, resp.data); 
-        }
-    }) 
-// const showTimes = [
-//     {Dates: "Mon Dec 17 2018", Venue: "Ronald Lane", Location: "San Francisco, CA"},
-//     {Dates: "Tue Jul 18 2019", Venue: "Pier 3 East", Location: "San Francisco, CA"},
-//     {Dates: "Fri Jul 22 2019", Venue: "View Lounge", Location: "San Francisco, CA"},
-//     {Dates: "Wed Aug 11 2019", Venue: "Pres Club", Location: "San Francisco, CA"},
-//     {Dates: "Sa Aug 12 2019", Venue: "Hyatt Agency", Location: "San Francisco, CA"},
-//     {Dates: "Fri Sep 05 2019", Venue: "Moscow Center", Location: "San Francisco, CA"} 
-// ]
-    
 const table = document.querySelector("table"); 
 const tableMediaQuery = window.matchMedia("(min-width: 768px)"); 
+const showTimes = [];
 
-function reloadTable (showTimes) {
+function reloadTable (tableMediaQuery) {
     removeChildren(table); 
-
-    if (tableMediaQuery.matches) {
-        makeTable(table, showTimes); 
-        makeTableHead (table, showTimes);
-    } else {
-        makeTableMobile(table, showTimes); 
-    }
-}
+    axios.get("https://project-1-api.herokuapp.com/showdates?api_key=" + projectKey) 
+        .then((resp) => {
+            showTimes.push(resp.data);
+            if (tableMediaQuery.matches) {
+                makeTable(table, resp.data); 
+                makeTableHead (table, resp.data);
+            } else {
+                makeTableMobile(table, resp.data); 
+            }
+        }) 
+    };
 
 function removeChildren (element) {
     while (element.firstChild) {
@@ -105,11 +88,5 @@ function makeTableMobile (targetTable, schedule) {
     }
 }
 
-// if (tableMediaQuery.matches) {
-//     makeTable(table, showTimes); 
-//     makeTableHead (table, showTimes);
-// } else {
-//     makeTableMobile(table, showTimes); 
-// }
-
-// window.onresize = reloadMobileTable(showTimes); 
+reloadTable(tableMediaQuery); 
+tableMediaQuery.addListener(reloadTable); 
