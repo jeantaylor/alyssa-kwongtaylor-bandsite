@@ -85,8 +85,10 @@ function formatDate(epochTime) {
     let msToday = Date.now(); 
     let msDiff = msToday - epochTime; 
     let daysAgo = Math.floor(msDiff / 8.64e+7); 
-    let timesText = this.daysAgo === 1 ? 'day' : 'days'; 
-    let dynamicTimestamp = this.daysAgo === 0 ? `today` : `${daysAgo} ${timesText} ago`; 
+    console.log(daysAgo); 
+    console.log(typeof(daysAgo)); 
+    let timesText = daysAgo === 1 ? 'day' : 'days'; 
+    let dynamicTimestamp = daysAgo === 0 ? 'today' : `${daysAgo} ${timesText} ago`; 
     return dynamicTimestamp; 
 }
 
