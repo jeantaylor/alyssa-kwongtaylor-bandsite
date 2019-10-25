@@ -82,11 +82,12 @@ function displayComments (commentData) {
 }
 
 function formatDate(epochTime) {
-    let date = new Date(epochTime); 
-    let mo = date.getMonth() + 1; 
-    let d = date.getDate(); 
-    let y = date.getFullYear(); 
-    return mo + "/" + d + "/" + y; 
+    let msToday = Date.now(); 
+    let msDiff = msToday - epochTime; 
+    let daysAgo = Math.floor(msDiff / 8.64e+7); 
+    let timesText = this.daysAgo === 1 ? 'day' : 'days'; 
+    let dynamicTimestamp = this.daysAgo === 0 ? `today` : `${daysAgo} ${timesText} ago`; 
+    return dynamicTimestamp; 
 }
 
 form.addEventListener('submit', (event) => {
