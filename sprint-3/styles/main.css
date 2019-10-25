@@ -609,8 +609,16 @@ body {
 }
 
 .conversation__comment-tool-icon {
+  background-color: #00000000;
+  padding: none;
+  border: none;
   height: inherit;
   width: auto;
+  opacity: 0.4;
+}
+
+.conversation__comment-tool-icon:hover {
+  opacity: 1;
 }
 
 @media only screen and (min-width: 768px) {

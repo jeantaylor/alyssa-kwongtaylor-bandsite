@@ -78,10 +78,10 @@ function displayComments (commentData) {
         id.appendChild(name); 
         id.appendChild(date); 
 
-        // likes.innerHTML = ''; 
+        // tools.innerHTML = '<img class="conversation__comment-tool-icon" src="assets/Icons/PNG/icons8-facebook-like-24.png" alt="Like icon"/><img class="conversation__comment-tool-icon" src="./assets/Icons/SVG/icons8-trash.svg" alt="Delete icon"/>'; 
 
-        // tools.appendChild(likes); 
-        tools.innerHTML = '<img class="conversation__comment-tool-icon" src="assets/Icons/PNG/icons8-facebook-like-24.png" alt="Like icon"/><img class="conversation__comment-tool-icon" src="./assets/Icons/SVG/icons8-trash.svg" alt="Delete icon"/>'; 
+        // Below adds both the comment tool button icons into the tool bar, likes 1st then delete
+        tools.innerHTML = '<button class="conversation__comment-tool-icon"><img src="assets/Icons/PNG/icons8-facebook-like-24.png" alt="Like icon"/></button><button class="conversation__comment-tool-icon"><img class="conversation__comment-tool-icon" src="./assets/Icons/SVG/icons8-trash.svg" alt="Delete icon"/></button>';
 
         commentText.appendChild(id);
         commentText.appendChild(msg); 
