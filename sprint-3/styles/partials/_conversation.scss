@@ -127,6 +127,18 @@
         margin-left: 10px; 
     }
 
+    &__comment-tools {
+        display: flex; 
+        justify-content: space-between;
+        width: 100%; 
+        height: 20px; 
+        margin-top: 16px; 
+    }
+
+    &__comment-tool-icon {
+        height: inherit; 
+        width: auto; 
+    }
 }
 
 @include medium {

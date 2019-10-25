@@ -596,6 +596,23 @@ body {
   margin-left: 10px;
 }
 
+.conversation__comment-tools {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 20px;
+  margin-top: 16px;
+}
+
+.conversation__comment-tool-icon {
+  height: inherit;
+  width: auto;
+}
+
 @media only screen and (min-width: 768px) {
   .conversation {
     margin: 0 3.13%;

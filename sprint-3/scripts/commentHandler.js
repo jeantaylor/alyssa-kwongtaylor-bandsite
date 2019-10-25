@@ -54,6 +54,13 @@ function displayComments (commentData) {
         let msg = document.createElement('div'); 
         msg.classList.add("conversation__comment-msg"); 
 
+        // New assets for delete and like
+        let tools = document.createElement('div'); 
+        tools.classList.add("conversation__comment-tools"); 
+
+        let likes = document.createElement('div'); 
+        likes.classList.add("conversation__likes"); 
+
         //Fetch and append data to elements 
         content = document.createTextNode(entry.name); 
         name.appendChild(content); 
@@ -64,12 +71,21 @@ function displayComments (commentData) {
         content = document.createTextNode(entry.comment); 
         msg.appendChild(content); 
 
+        // Assign comment id to comment to test out deletion func later
+        comment.id = entry.id; 
+
         // Building the Comment, inside elements out 
         id.appendChild(name); 
         id.appendChild(date); 
 
+        // likes.innerHTML = ''; 
+
+        // tools.appendChild(likes); 
+        tools.innerHTML = '<img class="conversation__comment-tool-icon" src="assets/Icons/PNG/icons8-facebook-like-24.png" alt="Like icon"/><img class="conversation__comment-tool-icon" src="./assets/Icons/SVG/icons8-trash.svg" alt="Delete icon"/>'; 
+
         commentText.appendChild(id);
         commentText.appendChild(msg); 
+        commentText.appendChild(tools); 
         
         avatarWrapper.appendChild(avatar); 
 
@@ -85,8 +101,6 @@ function formatDate(epochTime) {
     let msToday = Date.now(); 
     let msDiff = msToday - epochTime; 
     let daysAgo = Math.floor(msDiff / 8.64e+7); 
-    console.log(daysAgo); 
-    console.log(typeof(daysAgo)); 
     let timesText = daysAgo === 1 ? 'day' : 'days'; 
     let dynamicTimestamp = daysAgo === 0 ? 'today' : `${daysAgo} ${timesText} ago`; 
     return dynamicTimestamp; 
