@@ -693,9 +693,10 @@ body {
 }
 
 .shows__table-header {
-  color: #e1e1e1;
+  color: #afafaf;
   font-size: 12px;
   line-height: 20px;
+  text-transform: uppercase;
 }
 
 .shows__table-header:first-child {
@@ -759,6 +760,9 @@ body {
     font-size: 16px;
     line-height: 24px;
   }
+  .shows__btn-cell {
+    width: 22.22%;
+  }
   .shows__cta {
     margin: 0;
   }
@@ -777,6 +781,9 @@ body {
   .shows__table {
     width: 74.44%;
     margin-top: 32px;
+  }
+  .shows__btn-cell {
+    width: 19.90%;
   }
   .shows__cta {
     width: 100%;
@@ -853,12 +860,12 @@ body {
   line-height: 22px;
 }
 
-.footer__email {
+.footer__link {
   text-decoration: none;
   color: #fff;
 }
 
-.footer__email:hover {
+.footer__link:hover {
   color: #afafaf;
 }
 

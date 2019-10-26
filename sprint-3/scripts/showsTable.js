@@ -37,7 +37,7 @@ function makeTable (targetTable, schedule) {
             } 
         } 
         let cell = row.insertCell(); 
-        cell.classList.add("shows__table-content");
+        cell.classList.add("shows__table-content", "shows__btn-cell");
         let btn = document.createElement("button"); 
         btn.textContent = "Buy Tickets"; 
         btn.classList.add("shows__cta"); 
@@ -52,11 +52,22 @@ function makeTableHead (targetTable, schedule) {
     let row = tHead.insertRow(); 
     for (let key of scheduleKeys) {
             let th = document.createElement("th"); 
-            let text = document.createTextNode(key); 
-            if (key !== "id") {
-            th.appendChild(text); 
-            row.appendChild(th); 
-        }
+            // let text = document.createTextNode(key); 
+            if (key !== "id") { 
+                if (key === "date") {
+                    let text = "dates"; 
+                    th.innerHTML = text;
+                    row.appendChild(th); 
+                } else if (key === "place") {
+                    let text = "venue"; 
+                    th.innerHTML = text;
+                    row.appendChild(th); 
+                } else {
+                    let text = document.createTextNode(key); 
+                    th.appendChild(text); 
+                    row.appendChild(th); 
+                }
+            }
     }
 }
 
@@ -70,8 +81,15 @@ function makeTableMobile (targetTable, schedule) {
         cell.classList.add("shows__table-show"); 
         for (i = 1; i < 4; i++) {
             let header = document.createElement('div'); 
-            let text = document.createTextNode(scheduleKeys[i]); 
-            header.appendChild(text);
+
+            if (scheduleKeys[i] === "place") {
+                let text = "venue"; 
+                header.innerHTML = text;
+            } else {
+                let text = document.createTextNode(scheduleKeys[i]); 
+                header.appendChild(text);
+            }
+
             cell.appendChild(header);  
             header.classList.add("shows__table-header"); 
 

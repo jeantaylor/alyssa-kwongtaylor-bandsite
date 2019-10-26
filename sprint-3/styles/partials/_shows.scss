@@ -24,9 +24,10 @@
     }
 
     &__table-header {
-        color: $mercury; 
+        color: $silver; 
         font-size: 12px; 
         line-height: 20px;
+        text-transform: uppercase;
     }
 
     &__table-header:first-child {
@@ -97,6 +98,10 @@
             line-height: 24px;
         }
 
+        &__btn-cell {
+            width: 22.22%; 
+        }
+
         &__cta {
             margin: 0; 
         }
@@ -114,6 +119,10 @@
         &__table {
             width: 74.44%; 
             margin-top: 32px;
+        }
+
+        &__btn-cell {
+            width: 19.90%
         }
 
         &__cta {
