@@ -5,12 +5,13 @@ const thread = document.querySelector(".conversation__thread");
 
 // Fetch Data from API
 let commentData = []; 
-function reloadData() {
+function loadData() {
     axios.get("https://project-1-api.herokuapp.com/comments" + projectKey) 
         .then((resp) => {
             commentData = resp.data;
             displayComments(commentData); 
             deleteSetup(); 
+            likeSetup(); 
         }) 
 }
 
@@ -66,7 +67,7 @@ function displayComments (commentData) {
         content = document.createTextNode(entry.name); 
         name.appendChild(content); 
 
-        content = document.createTextNode(formatDate(entry.timestamp)); 
+        content = document.createTextNode(liveTimestamp(entry.timestamp)); 
         date.appendChild(content); 
 
         content = document.createTextNode(entry.comment); 
@@ -76,8 +77,14 @@ function displayComments (commentData) {
         id.appendChild(name); 
         id.appendChild(date); 
 
-        // Below adds both the comment tool button icons into the tool bar, likes 1st then delete
-        tools.innerHTML = `<button class="conversation__tool-icon like"><img src="assets/Icons/PNG/icons8-facebook-like-24.png" alt="Like icon"/></button><button class="conversation__tool-icon delete" id=${entry.id}><img src="./assets/Icons/SVG/icons8-trash.svg" alt="Delete icon"/></button>`;
+        // 'likes' contains the like button + is target destination for # likes 
+        likes.innerHTML= `<button class="conversation__tool-icon like" id="${entry.id}"><img src="assets/Icons/PNG/icons8-facebook-like-24.png" alt="Like icon"/></button><span>${entry.likes}</span>`
+        
+
+        // Adds the delete button to the comment toolbar
+        tools.innerHTML = `<button class="conversation__tool-icon delete" id=${entry.id}><img src="./assets/Icons/SVG/icons8-trash.svg" alt="Delete icon"/></button>`;
+        tools.appendChild(likes);
+        
 
         commentText.appendChild(id);
         commentText.appendChild(msg); 
@@ -93,7 +100,7 @@ function displayComments (commentData) {
     }
 }
 
-function formatDate(epochTime) {
+function liveTimestamp(epochTime) {
     let msToday = Date.now(); 
     let msDiff = msToday - epochTime; 
     let daysAgo = Math.floor(msDiff / 8.64e+7); 
@@ -106,15 +113,9 @@ function formatDate(epochTime) {
 // Submit Comment
 form.addEventListener('submit', (event) => {
     event.preventDefault(); 
-    
-    let name = event.target.name.value; 
-    let comment = event.target.comment.value; 
-    let avatar = event.target.avatar.src; 
 
-    let entry = {}; 
-
-    entry.name = name; 
-    entry.comment = comment; 
+    entry.name = event.target.name.value; 
+    entry.comment = event.target.comment.value; 
 
     form.reset(); 
 
@@ -123,11 +124,16 @@ form.addEventListener('submit', (event) => {
         url: ("https://project-1-api.herokuapp.com/comments" + projectKey), 
         data: {name: entry.name, comment: entry.comment} 
     }) .then(resp => {
-        reloadData();
+        loadData();
     });
 })
 
-reloadData(); 
+loadData(); 
+
+
+// Fnx below placed after initial load with timeouts bc they target elements created on load. 
+// Prevents targetting undefined objects, variables
+
 
 // Delete Comment Setup
 // Added another function (deleteSetup) around the setTimeout and deletePost function 
@@ -144,12 +150,34 @@ function deleteSetup () {
                 method: "delete",
                 url: ("https://project-1-api.herokuapp.com/comments/" + delId + projectKey), 
             }) .then(resp => {
-                reloadData();
+                loadData();
             });
         }
 
         Array.from(delBtns).forEach(function(element) {
             element.addEventListener('click', deletePost);
+        });        
+    }, 500)
+}
+
+function likeSetup () {
+    setTimeout( () => { 
+        let likeBtns = document.getElementsByClassName("like"); 
+
+        let likePost = function () {
+            let likeId; 
+            likeId = this.id;
+
+            axios({
+                method: "put",
+                url: ("https://project-1-api.herokuapp.com/comments/" + likeId + "/like" + projectKey), 
+            }) .then(resp => {
+                loadData();
+            });
+        }
+
+        Array.from(likeBtns).forEach(function(element) {
+            element.addEventListener('click', likePost);
         });        
     }, 500)
 }
