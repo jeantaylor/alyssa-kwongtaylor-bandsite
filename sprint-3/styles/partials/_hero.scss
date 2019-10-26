@@ -42,9 +42,10 @@
     }
 
     &__soundcloud-media {
+        border-radius: 8px;
         width: 100%; 
         height: 100px; 
-        margin-bottom: 64px;
+        margin-bottom: 50px;
     }
 }
 
@@ -57,7 +58,7 @@
         }
 
         &__text-wrapper {
-            margin: 96px 0; 
+            margin: 96px 0 75px 0; 
         }
 
         &__text {
@@ -70,7 +71,7 @@
         }
 
         &__soundcloud-media {
-            width: 55%; 
+            width: 60%; 
             height: 146px; 
             margin-bottom: 96px; 
         }
@@ -90,7 +91,7 @@
 
         &__text-wrapper {
             margin: 160px 0; 
-            max-width: 60%;
+            max-width: 55%;
         }
 
         &__soundcloud-media {
