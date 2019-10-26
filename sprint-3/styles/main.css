@@ -435,6 +435,10 @@ body {
   }
 }
 
+#name {
+  border: #323232 3px solid;
+}
+
 .conversation {
   margin: 0 5%;
 }
@@ -488,6 +492,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
 }
 
@@ -499,8 +506,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: inherit;
-  margin-left: 20px;
 }
 
 .conversation__field {
@@ -530,10 +535,7 @@ body {
   font-family: 'AvenirReg';
   border: #e1e1e1 2px solid;
   border-radius: 4px;
-}
-
-.conversation__fill:focus {
-  border: #323232 3px solid;
+  background-color: #fafafa;
 }
 
 .conversation__cta {
@@ -554,6 +556,10 @@ body {
   background-color: #0065ad;
 }
 
+.conversation__field-wrapper, .conversation__comment-text {
+  width: 76.39%;
+}
+
 .conversation__form, .conversation__comment {
   border-bottom: 1px solid #e1e1e1;
 }
@@ -569,9 +575,7 @@ body {
 }
 
 .conversation__comment-text {
-  width: 100%;
   margin-bottom: 24px;
-  margin-left: 20px;
 }
 
 .conversation__comment-id {
@@ -642,6 +646,10 @@ body {
   .conversation__cta {
     width: 30.77%;
   }
+  .conversation__field-wrapper, .conversation__comment-text {
+    width: 90.56%;
+    margin-left: 20px;
+  }
   .conversation__comment-id {
     margin-bottom: 16px;
     -webkit-box-pack: start;
@@ -656,6 +664,9 @@ body {
   }
   .conversation__wrapper {
     margin: 0 19.17% 40px 19.17%;
+  }
+  .conversation__field-wrapper, .conversation__comment-text {
+    width: 93.70%;
   }
   .conversation__cta {
     width: 31.75%;
