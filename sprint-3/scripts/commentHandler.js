@@ -10,6 +10,7 @@ function reloadData() {
         .then((resp) => {
             commentData = resp.data;
             displayComments(commentData); 
+            deleteSetup(); 
         }) 
 }
 
@@ -71,9 +72,6 @@ function displayComments (commentData) {
         content = document.createTextNode(entry.comment); 
         msg.appendChild(content); 
 
-        // Assign comment id to comment to test out deletion func later
-        // comment.id = entry.id; 
-
         // Building the Comment, inside elements out 
         id.appendChild(name); 
         id.appendChild(date); 
@@ -131,23 +129,27 @@ form.addEventListener('submit', (event) => {
 
 reloadData(); 
 
-// Delete Comment
-setTimeout( () => { 
-    let delBtns = document.getElementsByClassName("delete"); 
+// Delete Comment Setup
+// Added another function (deleteSetup) around the setTimeout and deletePost function 
+// Needed to fix the bug of only being able to delete one comment on a single pg load
+function deleteSetup () {
+    setTimeout( () => { 
+        let delBtns = document.getElementsByClassName("delete"); 
 
-    let deletePost = function () {
-        let delId; 
-        delId = this.id;
+        let deletePost = function () {
+            let delId; 
+            delId = this.id;
 
-        axios({
-            method: "delete",
-            url: ("https://project-1-api.herokuapp.com/comments/" + delId + projectKey), 
-        }) .then(resp => {
-            reloadData();
-        });
-    }
+            axios({
+                method: "delete",
+                url: ("https://project-1-api.herokuapp.com/comments/" + delId + projectKey), 
+            }) .then(resp => {
+                reloadData();
+            });
+        }
 
-    Array.from(delBtns).forEach(function(element) {
-        element.addEventListener('click', deletePost);
-    });        
-}, 500)
+        Array.from(delBtns).forEach(function(element) {
+            element.addEventListener('click', deletePost);
+        });        
+    }, 500)
+}
