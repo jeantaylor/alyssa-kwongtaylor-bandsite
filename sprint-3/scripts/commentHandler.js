@@ -1,12 +1,12 @@
 // Variable Declarations
-const projectKey = "2bb7dd6d-ca82-47b6-9411-0b448a4f3395"; 
+const projectKey = "?api_key=2bb7dd6d-ca82-47b6-9411-0b448a4f3395"; 
 const form = document.querySelector("#conversation__input"); 
 const thread = document.querySelector(".conversation__thread"); 
 
 // Fetch Data from API
 let commentData = []; 
 function reloadData() {
-    axios.get("https://project-1-api.herokuapp.com/comments?api_key=" + projectKey) 
+    axios.get("https://project-1-api.herokuapp.com/comments" + projectKey) 
         .then((resp) => {
             commentData = resp.data;
             displayComments(commentData); 
@@ -72,16 +72,14 @@ function displayComments (commentData) {
         msg.appendChild(content); 
 
         // Assign comment id to comment to test out deletion func later
-        comment.id = entry.id; 
+        // comment.id = entry.id; 
 
         // Building the Comment, inside elements out 
         id.appendChild(name); 
         id.appendChild(date); 
 
-        // tools.innerHTML = '<img class="conversation__comment-tool-icon" src="assets/Icons/PNG/icons8-facebook-like-24.png" alt="Like icon"/><img class="conversation__comment-tool-icon" src="./assets/Icons/SVG/icons8-trash.svg" alt="Delete icon"/>'; 
-
         // Below adds both the comment tool button icons into the tool bar, likes 1st then delete
-        tools.innerHTML = '<button class="conversation__comment-tool-icon"><img src="assets/Icons/PNG/icons8-facebook-like-24.png" alt="Like icon"/></button><button class="conversation__comment-tool-icon"><img class="conversation__comment-tool-icon" src="./assets/Icons/SVG/icons8-trash.svg" alt="Delete icon"/></button>';
+        tools.innerHTML = `<button class="conversation__tool-icon like"><img src="assets/Icons/PNG/icons8-facebook-like-24.png" alt="Like icon"/></button><button class="conversation__tool-icon delete" id=${entry.id}><img src="./assets/Icons/SVG/icons8-trash.svg" alt="Delete icon"/></button>`;
 
         commentText.appendChild(id);
         commentText.appendChild(msg); 
@@ -106,6 +104,8 @@ function formatDate(epochTime) {
     return dynamicTimestamp; 
 }
 
+
+// Submit Comment
 form.addEventListener('submit', (event) => {
     event.preventDefault(); 
     
@@ -122,7 +122,7 @@ form.addEventListener('submit', (event) => {
 
     axios({
         method: "post",
-        url: ("https://project-1-api.herokuapp.com/comments?api_key=" + projectKey), 
+        url: ("https://project-1-api.herokuapp.com/comments" + projectKey), 
         data: {name: entry.name, comment: entry.comment} 
     }) .then(resp => {
         reloadData();
@@ -130,3 +130,24 @@ form.addEventListener('submit', (event) => {
 })
 
 reloadData(); 
+
+// Delete Comment
+setTimeout( () => { 
+    let delBtns = document.getElementsByClassName("delete"); 
+
+    let deletePost = function () {
+        let delId; 
+        delId = this.id;
+
+        axios({
+            method: "delete",
+            url: ("https://project-1-api.herokuapp.com/comments/" + delId + projectKey), 
+        }) .then(resp => {
+            reloadData();
+        });
+    }
+
+    Array.from(delBtns).forEach(function(element) {
+        element.addEventListener('click', deletePost);
+    });        
+}, 500)

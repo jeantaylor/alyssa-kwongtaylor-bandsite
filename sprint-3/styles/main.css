@@ -459,7 +459,6 @@ body {
 }
 
 .conversation__avatar-wrapper {
-  margin-right: 20px;
   width: 48px;
   height: 48px;
   position: relative;
@@ -500,6 +499,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: inherit;
+  margin-left: 20px;
 }
 
 .conversation__field {
@@ -570,6 +570,7 @@ body {
 .conversation__comment-text {
   width: 100%;
   margin-bottom: 24px;
+  margin-left: 20px;
 }
 
 .conversation__comment-id {
@@ -608,7 +609,7 @@ body {
   margin-top: 16px;
 }
 
-.conversation__comment-tool-icon {
+.conversation__tool-icon {
   background-color: #00000000;
   padding: none;
   border: none;
@@ -617,7 +618,7 @@ body {
   opacity: 0.4;
 }
 
-.conversation__comment-tool-icon:hover {
+.conversation__tool-icon:hover {
   opacity: 1;
 }
 
