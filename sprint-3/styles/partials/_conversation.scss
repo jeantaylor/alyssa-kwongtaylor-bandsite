@@ -18,7 +18,6 @@
 
     &__form {
         display: flex;
-        justify-content: space-between;
     }
 // avatar-wrapper + avatar css modified from Bianca Power @ medium.com
 // Issue on ln 24 --> actual computed height in test browser (Chrome) gives a computed height that isn't the same as specified in scss
@@ -39,12 +38,13 @@
         object-fit: cover;
         width: inherit;
         height: inherit;
+        background-color: $silver;
     }
 
     &__input {
         display: flex;
-        justify-content: space-between;
         width: 100%;
+        justify-content: center;
     }
 
     &__field-wrapper {
@@ -95,7 +95,8 @@
 
     &__field-wrapper, 
     &__comment-text {
-        width: 76.39%; 
+        width: 76.39%;
+        margin-left: 20px;
     }
 
     &__form, 
@@ -106,7 +107,7 @@
     &__comment {
         margin: 24px 0; 
         display: flex; 
-        justify-content: space-between; 
+        justify-content: center;
     }
 
     &__comment-text {

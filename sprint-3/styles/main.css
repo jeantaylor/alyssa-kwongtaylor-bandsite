@@ -458,9 +458,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .conversation__avatar-wrapper {
@@ -486,16 +483,17 @@ body {
      object-fit: cover;
   width: inherit;
   height: inherit;
+  background-color: #afafaf;
 }
 
 .conversation__input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .conversation__field-wrapper {
@@ -558,6 +556,7 @@ body {
 
 .conversation__field-wrapper, .conversation__comment-text {
   width: 76.39%;
+  margin-left: 20px;
 }
 
 .conversation__form, .conversation__comment {
@@ -569,9 +568,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .conversation__comment-text {

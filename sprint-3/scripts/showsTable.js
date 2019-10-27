@@ -4,7 +4,7 @@ const table = document.querySelector("table");
 const tableMediaQuery = window.matchMedia("(min-width: 768px)"); 
 const showTimes = [];
 
-function reloadTable (tableMediaQuery) {
+function loadData (tableMediaQuery) {
     removeChildren(table); 
     axios.get("https://project-1-api.herokuapp.com/showdates?api_key=" + projectKey) 
         .then((resp) => {
@@ -106,5 +106,5 @@ function makeTableMobile (targetTable, schedule) {
     }
 }
 
-reloadTable(tableMediaQuery); 
-tableMediaQuery.addListener(reloadTable); 
+loadData(tableMediaQuery); 
+tableMediaQuery.addListener(loadData); 

@@ -3,7 +3,7 @@ const projectKey = "?api_key=2bb7dd6d-ca82-47b6-9411-0b448a4f3395";
 const form = document.querySelector("#conversation__input"); 
 const thread = document.querySelector(".conversation__thread"); 
 
-// Fetch Data from API
+// Fetch Data from API + Setup Event Handlers
 let commentData = []; 
 function loadData() {
     axios.get("https://project-1-api.herokuapp.com/comments" + projectKey) 
@@ -77,7 +77,7 @@ function displayComments (commentData) {
         id.appendChild(name); 
         id.appendChild(date); 
 
-        // 'likes' contains the like button + is target destination for # likes 
+        // 'likes' contains the like button & is target destination for # likes 
         likes.innerHTML= `<button class="conversation__tool-icon like" id="${entry.id}"><img src="assets/Icons/PNG/icons8-facebook-like-24.png" alt="Like icon"/></button><span>${entry.likes}</span>`
         
 
